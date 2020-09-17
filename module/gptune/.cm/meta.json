@@ -1,0 +1,11 @@
+{
+  "actions": {
+    "autotune": {
+      "desc": "autotune with gptune (default)"
+    },
+    "crowdtune": {
+      "desc": "autotune with gptune with history database"
+    }
+  },
+  "desc": "GPTune workflows"
+}
