@@ -1,15 +1,19 @@
 #
 # Collective Knowledge (GPTune workflows)
 #
-# 
-# 
 #
-# Developer: 
+#
+#
+# Developer:
 #
 
 cfg={}  # Will be updated by CK (meta description of this module)
 work={} # Will be updated by CK (temporal data)
-ck=None # Will be updated by CK (initialized CK kernel) 
+ck=None # Will be updated by CK (initialized CK kernel)
+
+
+#gptune_benchmarks = ["gptune-demo","scalapack","superlu_dist"]
+gptune_benchmarks = ["gptune-demo"]
 
 # Local settings
 
@@ -47,6 +51,7 @@ def crowdtune(i):
     """
 
     ck.out('autotune with gptune with history database')
+    ck.out('currently do not support history database')
 
     ck.out('')
     ck.out('Command line: ')
@@ -56,6 +61,19 @@ def crowdtune(i):
     cmd=json.dumps(i, indent=2)
 
     ck.out(cmd)
+
+    application=i['bench']
+
+    if application in gptune_benchmarks:
+        ck.out('run target application: ' + application)
+
+        r=ck.access({'action':'run',
+                     'module_uoa':'program',
+                     'data_uoa':application})
+        if r['return']>0: return r
+
+    else:
+        ck.out('not available application: ' + application)
 
     return {'return':0}
 
@@ -85,5 +103,18 @@ def autotune(i):
     cmd=json.dumps(i, indent=2)
 
     ck.out(cmd)
+
+    application=i['bench']
+
+    if application in gptune_benchmarks:
+        ck.out('run target application: ' + application)
+
+        r=ck.access({'action':'run',
+                     'module_uoa':'program',
+                     'data_uoa':application})
+        if r['return']>0: return r
+
+    else:
+        ck.out('not available application: ' + application)
 
     return {'return':0}
