@@ -165,7 +165,13 @@ if __name__ == '__main__':
 
     options.validate(computer=computer)
 
-    os.environ['TUNER_NAME'] = 'hpbandster'
+    os.environ['TUNER_NAME'] = 'GPTune'
+
+    if (os.environ.get('history_db','') == 'yes'):
+        print ('set history database mode')
+        options['history_db'] = 1
+        options['application_name'] = 'gptune-demo'
+        #options['history_db_path'] = '/home/ycho/'
 
     giventask = [[6]]
     # giventask = [[i] for i in np.arange(0, 10, 0.5).tolist()]

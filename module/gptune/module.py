@@ -67,9 +67,25 @@ def crowdtune(i):
     if application in gptune_benchmarks:
         ck.out('run target application: ' + application)
 
+        import copy
+
+        input_keys = list(i.keys())
+        argument_keys = copy.deepcopy(input_keys)
+        prescribed_keys = {'cids', 'action', 'bench', 'cid', 'out', 'module_uoa', 'xcids'}
+        for prescribed_key in prescribed_keys:
+            argument_keys.remove(prescribed_key)
+        print (argument_keys)
+
+        arguments = {}
+        for argument_key in argument_keys:
+            arguments[argument_key] = i[argument_key]
+        arguments = {'history_db':'yes'}
+        print (arguments)
+
         r=ck.access({'action':'run',
                      'module_uoa':'program',
-                     'data_uoa':application})
+                     'data_uoa':application,
+                     'env':arguments})
         if r['return']>0: return r
 
     else:
@@ -108,10 +124,24 @@ def autotune(i):
 
     if application in gptune_benchmarks:
         ck.out('run target application: ' + application)
+        import copy
+
+        input_keys = list(i.keys())
+        argument_keys = copy.deepcopy(input_keys)
+        prescribed_keys = {'cids', 'action', 'bench', 'cid', 'out', 'module_uoa', 'xcids'}
+        for prescribed_key in prescribed_keys:
+            argument_keys.remove(prescribed_key)
+        print (argument_keys)
+
+        arguments = {}
+        for argument_key in argument_keys:
+            arguments[argument_key] = i[argument_key]
+        print (arguments)
 
         r=ck.access({'action':'run',
                      'module_uoa':'program',
-                     'data_uoa':application})
+                     'data_uoa':application,
+                     'env':arguments})
         if r['return']>0: return r
 
     else:

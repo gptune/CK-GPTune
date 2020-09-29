@@ -22,7 +22,7 @@
     "default": {
       "ignore_return_code": "no",
       "run_time": {
-        "run_cmd_main": "$<<CK_ENV_COMPILER_PYTHON_FILE>>$ ..$#dir_sep#$demo.py",
+        "run_cmd_main": "$MPIRUN -n 1 $<<CK_ENV_COMPILER_PYTHON_FILE>>$ ..$#dir_sep#$demo.py",
         "run_cmd_out1": "stdout.log",
         "run_cmd_out2": "stderr.log",
         "run_output_files": [
