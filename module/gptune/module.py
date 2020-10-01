@@ -79,7 +79,8 @@ def crowdtune(i):
         arguments = {}
         for argument_key in argument_keys:
             arguments[argument_key] = i[argument_key]
-        arguments = {'history_db':'yes'}
+        arguments['history_db']='yes'
+        #arguments = {'history_db':'yes'}
         print (arguments)
 
         r=ck.access({'action':'run',
