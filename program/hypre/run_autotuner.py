@@ -239,19 +239,14 @@ def main():
     options['verbose'] = False
     options.validate(computer=computer)
 
+    if (os.environ.get('history_db','') == 'yes'):
+        print ('set history database mode')
+        options['history_db'] = 1
+        options['application_name'] = 'hypre'
+        #options['history_db_path'] = './'
 
-    """ Intialize the tuner with existing data stored as last check point"""
-    try:
-        data = pickle.load(open('Data_nodes_%d_cores_%d_nxmax_%d_nymax_%d_nzmax_%d_machine_%s_jobid_%d.pkl' % (nodes, cores, nxmax, nymax, nzmax, machine, JOBID), 'rb'))
-        giventask = data.I
-    except (OSError, IOError) as e:
-        data = Data(problem)
-        giventask = [[randint(nxmin,nxmax),randint(nymin,nymax),randint(nzmin,nzmax)] for i in range(ntask)]
-
-    # giventask = [[50, 60, 80], [60, 80, 100]]
-    # # the following will use only task lists stored in the pickle file
-    # data = Data(problem)
-
+    data = Data(problem)
+    giventask = [[randint(nxmin,nxmax),randint(nymin,nymax),randint(nzmin,nzmax)] for i in range(ntask)]
 
     if(TUNER_NAME=='GPTune'):
         gt = GPTune(problem, computer=computer, data=data, options=options, driverabspath=os.path.abspath(__file__))
@@ -260,13 +255,6 @@ def main():
         NS = nruns
         (data, model, stats) = gt.MLA(NS=NS, NI=NI, Igiven=giventask, NS1=max(NS//2, 1))
         print("stats: ", stats)
-
-        """ Dump the data to file as a new check point """
-        pickle.dump(data, open('Data_nodes_%d_cores_%d_nxmax_%d_nymax_%d_nzmax_%d_machine_%s_jobid_%d.pkl' % (nodes, cores, nxmax, nymax, nzmax, machine, JOBID), 'wb'))
-
-        """ Dump the tuner to file for TLA use """
-        pickle.dump(gt, open('MLA_nodes_%d_cores_%d_nxmax_%d_nymax_%d_nzmax_%d_machine_%s_jobid_%d.pkl' % (nodes, cores, nxmax, nymax, nzmax, machine, JOBID), 'wb'))
-
 
         """ Print all input and parameter samples """
         for tid in range(NI):

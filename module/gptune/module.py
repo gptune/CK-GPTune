@@ -13,7 +13,7 @@ ck=None # Will be updated by CK (initialized CK kernel)
 
 
 #gptune_benchmarks = ["gptune-demo","scalapack","superlu_dist"]
-gptune_benchmarks = ["gptune-demo","scalapack-pdqrdriver"]
+gptune_benchmarks = ["gptune-demo","scalapack-pdqrdriver","hypre"]
 
 # Local settings
 
@@ -51,7 +51,6 @@ def crowdtune(i):
     """
 
     ck.out('autotune with gptune with history database')
-    ck.out('currently do not support history database')
 
     ck.out('')
     ck.out('Command line: ')
@@ -74,14 +73,14 @@ def crowdtune(i):
         prescribed_keys = {'cids', 'action', 'bench', 'cid', 'out', 'module_uoa', 'xcids'}
         for prescribed_key in prescribed_keys:
             argument_keys.remove(prescribed_key)
-        print (argument_keys)
+        #print (argument_keys)
 
         arguments = {}
         for argument_key in argument_keys:
             arguments[argument_key] = i[argument_key]
         arguments['history_db']='yes'
         #arguments = {'history_db':'yes'}
-        print (arguments)
+        #print (arguments)
 
         r=ck.access({'action':'run',
                      'module_uoa':'program',
