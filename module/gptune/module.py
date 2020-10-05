@@ -13,7 +13,7 @@ ck=None # Will be updated by CK (initialized CK kernel)
 
 
 #gptune_benchmarks = ["gptune-demo","scalapack","superlu_dist"]
-gptune_benchmarks = ["gptune-demo","scalapack-pdqrdriver","hypre"]
+gptune_benchmarks = ["gptune-demo","scalapack-pdqrdriver","hypre","superlu"]
 
 # Local settings
 
