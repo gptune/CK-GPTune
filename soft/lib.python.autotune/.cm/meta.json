@@ -1,0 +1,20 @@
+{
+  "auto_detect": "yes",
+  "customize": {
+    "check_that_exists": "yes",
+    "env_prefix": "CK_ENV_PYTHON_PACKAGE_AUTOTUNE",
+    "limit_recursion_dir_search": {
+      "linux": 5,
+      "win": 5
+    },
+    "soft_file_universal": "autotune$#sep#$__init__.py",
+    "version_module_name": "version",
+    "version_variable_name": "version"
+  },
+  "soft_name": "Python Autotune library",
+  "tags": [
+    "lib",
+    "python-package",
+    "autotune"
+  ]
+}
