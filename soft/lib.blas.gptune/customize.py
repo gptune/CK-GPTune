@@ -160,6 +160,7 @@ def setup(i):
     env[env_prefix+'_INCLUDE_NAME'] = cus.get('include_name','')
     env[env_prefix+'_STATIC_NAME']  = cus.get('static_lib','')
     env[env_prefix+'_DYNAMIC_NAME'] = cus.get('dynamic_lib','')
+    env['BLAS_LIB'] = os.path.join(path_lib, cus.get('dynamic_lib',''))
 
     return {'return':0, 'bat':shell_setup_script_contents}
 
