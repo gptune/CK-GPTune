@@ -123,4 +123,6 @@ def setup(i):
     if r['return']>0: return r
     s += r['script']
 
+    env['LAPACK_LIB'] = fp
+
     return {'return':0, 'bat':s}
