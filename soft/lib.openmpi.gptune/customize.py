@@ -129,6 +129,11 @@ def setup(i):
     cus['path_bin']=pb
     env['CK_ENV_LIB_MPI_CC'] = os.path.join(pb,'mpicc.openmpi')
 
+    env['MPIF90'] = os.path.join(pb,'mpif90')
+    env['MPICC'] = os.path.join(pb,'mpicc')
+    env['MPICXX'] = os.path.join(pb,'mpicxx')
+    env['MPIRUN'] = os.path.join(pb,'mpirun')
+
     r = ck.access({'action': 'lib_path_export_script',
                    'module_uoa': 'os',
                    'host_os_dict': hosd,
