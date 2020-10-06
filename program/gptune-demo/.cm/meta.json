@@ -8,6 +8,20 @@
       "tags": "compiler,lang-python"
     }
   },
+  "run_deps": {
+    "lib-openmpi": {
+      "local": "yes",
+      "name": "OpenMPI library",
+      "tags": "lib,openmpi",
+      "version_from": [4,0,1]
+    },
+    "lib-blas": {
+      "local": "yes",
+      "name": "BLAS library",
+      "tags": "lib,blas,gptune",
+      "version_from": [3.8.0]
+    }
+  },
   "data_name": "gptune-demo",
   "main_language": "python",
   "no_compile": "yes",
@@ -31,10 +45,6 @@
         ]
       }
     }
-  },
-  "run_vars": {
-    "CK_VAR1": 123,
-    "CK_VAR2": 666
   },
   "tags": [
     "program",
