@@ -62,6 +62,9 @@
       "tags": "lib,python-package,scikit-optimize,skopt"
     }
   },
+  "end_full_path": {
+    "linux": "GPTune$#sep#$lib_gptuneclcm.so"
+  },
   "process_script": "install",
   "soft_uoa": "3d7e9204d6864d0f",
   "suggested_path": "lib-gptune",

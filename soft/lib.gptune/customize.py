@@ -134,4 +134,8 @@ def setup(i):
     if os.path.isdir(path_bin):
         env['PATH']         = path_bin + ( ';%PATH%' if winh=='yes' else ':${PATH}')
 
+    env['GPTUNEROOT']       = path_build
+    gptune_python_codes     = os.path.join(path_build, 'GPTune')
+    env['PYTHONPATH']       = path_build + ":" + gptune_python_codes + ( ';%PYTHONPATH%' if winh=='yes' else ':${PYTHONPATH}')
+
     return {'return':0, 'bat':''}
