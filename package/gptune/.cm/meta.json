@@ -1,6 +1,70 @@
 {
-  "end_full_path_universal": "GPTune$#sep#$__init__.py",
+  "customize": {
+    "install_env": {
+    },
+    "version": "1.0.0"
+  },
+  "deps": {
+    "python": {
+      "add_to_path": "yes",
+      "local": "yes",
+      "name": "Python interpreter",
+      "sort": 10,
+      "tags": "compiler,python",
+      "version_from": [3,0,0]
+    },
+    "compiler": {
+      "local": "yes",
+      "name": "C compiler",
+      "sort": 20,
+      "tags": "compiler,lang-c"
+    },
+    "openmpi": {
+      "local": "yes",
+      "name": "OpenMPI library",
+      "tags": "lib,mpi,openmpi",
+      "version_from": [4,0,1]
+    },
+    "blas": {
+      "local": "yes",
+      "name": "BLAS",
+      "sort": 30,
+      "tags": "lib,blas,cblas"
+    },
+    "lapack": {
+      "local": "yes",
+      "name": "LAPACK",
+      "sort": 40,
+      "tags": "lib,lapack"
+    },
+    "scalapack": {
+      "local": "yes",
+      "name": "SCALAPACK",
+      "sort": 50,
+      "tags": "lib,scalapack"
+    },
+    "autotune": {
+      "local": "yes",
+      "name": "Python Autotune library",
+      "sort": 60,
+      "tags": "lib,python-package,autotune"
+    },
+    "mpi4py": {
+      "local": "yes",
+      "name": "Python MPI4PY library",
+      "sort": 70,
+      "tags": "lib,python-package,mpi4py"
+    },
+    "scikit-optimize": {
+      "local": "yes",
+      "name": "Python Scikit-Optimize library",
+      "sort": 80,
+      "tags": "lib,python-package,scikit-optimize,skopt"
+    }
+  },
+  "process_script": "install",
   "soft_uoa": "3d7e9204d6864d0f",
+  "suggested_path": "lib-gptune",
   "tags": [
     "lib",
     "gptune",
