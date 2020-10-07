@@ -21,7 +21,6 @@
     "lib",
     "blas",
     "cblas",
-    "blas",
     "no-openblas"
   ]
 }
