@@ -20,7 +20,6 @@
   "tags": [
     "lib",
     "blas",
-    "cblas",
-    "no-openblas"
+    "gptune"
   ]
 }

@@ -110,7 +110,13 @@ def setup(i):
     path_lib                = os.path.dirname(full_path)
     path_install            = os.path.dirname(path_lib)
 
+    #print ("full_path: " + full_path)
+    #print ("path_lib: " + path_lib)
+    #print ("path_install: " + path_install)
+
     env                     = i['env']
-    env['PYTHONPATH']       = path_install + ( ';%PYTHONPATH%' if winh=='yes' else ':${PYTHONPATH}')
+
+    pythonpath_for_gptune   = os.path.abspath(os.path.join(path_install, os.pardir))
+    env['PYTHONPATH']       = pythonpath_for_gptune + ( ';%PYTHONPATH%' if winh=='yes' else ':${PYTHONPATH}')
 
     return {'return':0, 'bat':''}

@@ -15,11 +15,11 @@
       "tags": "lib,openmpi",
       "version_from": [4,0,1]
     },
-    "lib-blas": {
+    "lib-gptune": {
       "local": "yes",
-      "name": "BLAS library",
-      "tags": "lib,blas,gptune",
-      "version_from": [3.8.0]
+      "name": "GPTune library",
+      "tags": "lib,gptune",
+      "version_from": [1,0,0]
     }
   },
   "data_name": "gptune-demo",
