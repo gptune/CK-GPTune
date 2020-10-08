@@ -9,12 +9,11 @@ This repository contains artifacts and workflows to use GPTune
 - Linux
 - Python 3+
 - Collective Knowledge Framework (CK) - https://cknowledge.org/
-- Other dependencies can be installed by CK-GPTune workflows
 
-## Installation of GPTune
+## Install GPTune
 
 CK-GPTune allows you to install the GPTune software package
-(https://github.com/gptune/GPTune/tree/history_db) using the following command.
+(https://github.com/gptune/GPTune/tree/history_db) with the following command.
 
 ```
 $ ck install package:gptune
@@ -23,13 +22,11 @@ $ ck install package:gptune
 GPTune has multiple dependencies (i.e. software packages needed by GPTune).
 For example, GPTune requires OpenMPI, BLAS, LAPACK, Scalapack, MPI4PY,
 Scikit-optimize, and Autotune. This command automatically detects
-whether these software are already available on your system.
+whether these software are available on your system.
 
-If these softwares are not available, CK-GPTune will print out a message to
+If there are missing software packages, CK-GPTune will print out a message to
 let you know which software packages need to be installed. If there are multiple
-software verions in your computer, CK-GPTune will ask you to choose one,
-then CK-GPTune updates the environment variables to keep the version numbers
-and the paths.
+software verions in your computer, CK-GPTune will ask you to choose one.
 
 After resolving all the dependencies, the GPTune software will be automatically
 installed in a sub directory in $HOME/CK-TOOLS.
@@ -38,7 +35,7 @@ installed in a sub directory in $HOME/CK-TOOLS.
 e.g. $HOME/CK-TOOLS/lib-gptune-1.0.0-gcc-9.3.0-compiler.python-3.8.5-linux-64
 ```
 
-## Detect GPTune installation
+## Detect GPTune
 
 Before using CK-GPTune workflows, you will need to detect the GPTune package
 with the following CK command.
@@ -48,24 +45,21 @@ $ ck detect soft:lib.gptune
 ```
 
 This command will detect the GPTune software installation paths and prepare
-an executable environment by setting required environment variables, this is so
-called CK `virtual` environment.
+an executable environment by setting all the required environment variables,
+this is also called CK `virtual` environment.
 
 ## GPTune example programs
 
 This repository provides a number of benchmark programs to test GPTune.
-You can install and run these benchmarks using simple CK command line interafaces.
 We are currently offering four programs `gptune-demo`, `scalapack-pdqrdriver`,
-`superlu-pddspawn`, and `hypre-ij`. You can find these programs in the `program` directory.
+`superlu-pddspawn`, and `hypre-ij`. Please check out the `program` directory
+for the details.
 
-These programs can be installed and executed with the following commands.
-
-#### Installation of programs
-
-Similar to the GPTune software package, we can install these programs using
-a simple command. If there are software dependencies (defined in the meta.json
-of each benchmark), this command will detect the `path` and `version` of the
-required softwares.
+You can install and run these benchmarks using simple CK command line interafaces.
+Similar to when we install the GPTune software package,
+if there are software dependencies (defined in meta.json in the .cm directory
+of each benchmark), CK-GPTune will detect the installation `path` and `version`
+of the required softwares.
 
 ```
 $ ck install ck-gptune:program:hypre
@@ -81,43 +75,18 @@ $ ck run ck-gptune:program:hypre
 
 CK-GPTune provides a CK module called `gptune` that provides multiple actions
 to use GPTune for specific purposes (e.g. run autotuning with or without history database).
+We can run GPTune workflows as follows.
 
-#### Autotuning without using history database
+### Run Autotuning
 
 ```
 $ ck autotune gptune --bench=hypre
 ```
 
-This command will run the autotuner for the `hypre` example. The output is stored
-in the `tmp` directory in `ck-gptune/program/hypre/tmp`.
-
-#### Autotuning with history database
-
-```
-$ ck crowdtune gptune --bench=hypre
-```
-
-This command will run the autotuner for the `hypre` example with history database.
+This command will run the autotuner for the `hypre` example without history database.
 The output is stored in the `tmp` directory in `ck-gptune/program/hypre/tmp`.
-The performance data JSON file is also stored in the `tmp` directory.
 
-#### What will be saved in the history JSON file?
-
-The GPTune autotuner receives information about input space (IS) and
-parameter space (PS) from the user, then computes output space (OS) after function evaluations.
-Each application will have a JSON file which contains all IS, PS, and OS information
-from all prevoius runs.
-
-Regarding PS: in addition to the PS information from the users,
-we also save the machine info (name), MPI run info. (the number of nodes/cores) in the
-last dimensions of the PS.
-
-Then, I am now working on saving the versions of software packages in the last demensions of the PS.
-This should be done shortly because we can leverage the software package detection plugins that we
-have developed for preparing benchmark applications (see the above `Installation of programs`).
-
-
-#### How to pass arguments
+### How to pass arguments
 
 We can also pass arguments as follows. If the argument values are not given by this
 command line, GPTune will use the default values defined in the program code.
@@ -126,4 +95,39 @@ command line, GPTune will use the default values defined in the program code.
 $ ck autotune gptune --bench=hypre --ntask=10 --nruns=10
 ```
 
+### Autotuning with history database
+
+```
+$ ck crowdtune gptune --bench=hypre
+```
+
+This command will run the autotuner for the `hypre` example with history database.
+The output is stored in the `tmp` directory in `ck-gptune/program/hypre/tmp`.
+The performance data JSON file will also be stored in the `tmp` directory.
+
+### What will be saved in the history JSON file?
+
+The GPTune autotuner receives the information about input space (IS) and
+parameter space (PS) from the user, then computes output space (OS) after function evaluations.
+Each application will have a JSON file which contains all the IS, PS, and OS information
+from all previous runs.
+
+*Regarding PS*
+
+In addition to the PS information from the users, we also save the machine info (name),
+MPI run info. (the number of nodes/cores) in the last dimensions of the PS.
+
+Also, I am now working on saving the versions of software packages in addition to the current PS.
+This should be done shortly because we can now leverage the software package detection plugins that we
+have developed for automating installation of GPTune and benchmark applications
+(see the above `Install GPTune` and `GPTune example programs`).
+
+
+## Acknowledgements
+
+GPTune Copyright (c) 2019, The Regents of the University of California, through Lawrence Berkeley National Laboratory (subject to receipt of any required approvals from the U.S. Dept. of Energy) and the University of California, Berkeley. All rights reserved.
+
+If you have questions about your rights to use or distribute this software, please contact Berkeley Lab's Intellectual Property Office at IPO@lbl.gov.
+
+NOTICE. This Software was developed under funding from the U.S. Department of Energy and the U.S. Government consequently retains certain rights. As such, the U.S. Government has been granted for itself and others acting on its behalf a paid-up, nonexclusive, irrevocable, worldwide license in the Software to reproduce, distribute copies to the public, prepare derivative works, and perform publicly and display publicly, and to permit other to do so.
 
