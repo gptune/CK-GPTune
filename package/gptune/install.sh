@@ -1,6 +1,6 @@
 #! /bin/bash
 
-git clone https://github.com/gptune/GPTune GPTune
+git clone -b history_db https://github.com/gptune/GPTune GPTune
 
 export GPTUNEROOT=$INSTALL_DIR/GPTune/
 cd $GPTUNEROOT
