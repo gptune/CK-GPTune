@@ -55,14 +55,14 @@ We are currently offering four programs `gptune-demo`, `scalapack-pdqrdriver`,
 `superlu-pddspawn`, and `hypre-ij`. Please check out the `program` directory
 for the details.
 
-You can install and run these benchmarks using simple CK command line interafaces.
+You can install (compile) and run these benchmarks using simple CK command line interafaces.
 Similar to when we install the GPTune software package,
 if there are software dependencies (defined in meta.json in the .cm directory
 of each benchmark), CK-GPTune will detect the installation `path` and `version`
 of the required softwares.
 
 ```
-$ ck install ck-gptune:program:hypre
+$ ck compile ck-gptune:program:hypre
 ```
 
 We can also run the benchmark, as defined by the `run_cmd` in the meta.json file.
