@@ -105,7 +105,7 @@ This command will run the autotuner for the `hypre` example with history databas
 The output is stored in the `tmp` directory in `ck-gptune/program/hypre/tmp`.
 The performance data JSON file will also be stored in the `tmp` directory.
 
-### What will be saved in the history JSON file?
+### What will be stored in the history JSON files?
 
 The GPTune autotuner receives the information about input space (IS) and
 parameter space (PS) from the user, then computes output space (OS) after function evaluations.
@@ -114,14 +114,20 @@ from all previous runs.
 
 *Regarding PS*
 
-In addition to the PS information from the users, we also save the machine info (name),
-MPI run info. (the number of nodes/cores) in the last dimensions of the PS.
+In addition to the PS information given by the autotuner parameter, we also save the machine info. (name),
+the number of nodes/cores in the last dimensions of the PS (PS\_m).
 
 Also, I am now working on saving the versions of software packages in addition to the current PS.
-This should be done shortly because we can now leverage the software package detection plugins that we
-have developed for automating installation of GPTune and benchmark applications
-(see the above `Install GPTune` and `GPTune example programs`).
+This should be done easily because we can now leverage the software package detection plugins that we
+have developed for automating installation of GPTune and benchmark applications.
 
+*Some Examples*
+
+the `soft` directory contains software detection plugins that we have added for CK-GPTune.
+
+`program/hypre/tmp/hypre.json' contains an example JSON history performance data file.
+
+`program/hypre/tmp/env.temp' shows an environment setup (versions of detected software packages).
 
 ## Acknowledgements
 

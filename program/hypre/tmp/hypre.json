@@ -1,0 +1,273 @@
+{
+    "name": "hypre",
+    "perf_data": [
+        {
+            "I": {
+                "nx": 79,
+                "ny": 84,
+                "nz": 79
+            },
+            "func_eval": [
+                {
+                    "P": {
+                        "Px": "1",
+                        "Py": "2",
+                        "Nproc": "3",
+                        "strong_threshold": "0.6474970406652845",
+                        "trunc_factor": "0.46425518559506196",
+                        "P_max_elmts": "6",
+                        "coarsen_type": "8",
+                        "relax_type": "6",
+                        "smooth_type": "8",
+                        "smooth_num_levels": "2",
+                        "interp_type": "8",
+                        "agg_num_levels": "3"
+                    },
+                    "P_m": {
+                        "machine": "mymachine",
+                        "nodes": 1,
+                        "cores": 1,
+                        "nprocmin_pernode": 1
+                    },
+                    "O": {
+                        "r": 13.78
+                    }
+                },
+                {
+                    "P": {
+                        "Px": "1",
+                        "Py": "1",
+                        "Nproc": "1",
+                        "strong_threshold": "0.07366246378456542",
+                        "trunc_factor": "0.6742049716927784",
+                        "P_max_elmts": "9",
+                        "coarsen_type": "4",
+                        "relax_type": "-1",
+                        "smooth_type": "6",
+                        "smooth_num_levels": "4",
+                        "interp_type": "6",
+                        "agg_num_levels": "4"
+                    },
+                    "P_m": {
+                        "machine": "mymachine",
+                        "nodes": 1,
+                        "cores": 1,
+                        "nprocmin_pernode": 1
+                    },
+                    "O": {
+                        "r": 66.97
+                    }
+                },
+                {
+                    "P": {
+                        "Px": "3",
+                        "Py": "1",
+                        "Nproc": "3",
+                        "strong_threshold": "0.6982590046588197",
+                        "trunc_factor": "0.7507744298904454",
+                        "P_max_elmts": "1",
+                        "coarsen_type": "6",
+                        "relax_type": "0",
+                        "smooth_type": "8",
+                        "smooth_num_levels": "4",
+                        "interp_type": "0",
+                        "agg_num_levels": "2"
+                    },
+                    "P_m": {
+                        "machine": "mymachine",
+                        "nodes": 1,
+                        "cores": 1,
+                        "nprocmin_pernode": 1
+                    },
+                    "O": {
+                        "r": 9.379999999999999
+                    }
+                },
+                {
+                    "P": {
+                        "Px": "1",
+                        "Py": "3",
+                        "Nproc": "3",
+                        "strong_threshold": "0.88428431087625",
+                        "trunc_factor": "0.08946091939037538",
+                        "P_max_elmts": "4",
+                        "coarsen_type": "6",
+                        "relax_type": "6",
+                        "smooth_type": "8",
+                        "smooth_num_levels": "3",
+                        "interp_type": "6",
+                        "agg_num_levels": "0"
+                    },
+                    "P_m": {
+                        "machine": "mymachine",
+                        "nodes": 1,
+                        "cores": 1,
+                        "nprocmin_pernode": 1
+                    },
+                    "O": {
+                        "r": 10.09
+                    }
+                },
+                {
+                    "P": {
+                        "Px": "3",
+                        "Py": "1",
+                        "Nproc": "3",
+                        "strong_threshold": "0.9338105704922821",
+                        "trunc_factor": "0.43150632929828897",
+                        "P_max_elmts": "10",
+                        "coarsen_type": "2",
+                        "relax_type": "18",
+                        "smooth_type": "9",
+                        "smooth_num_levels": "0",
+                        "interp_type": "6",
+                        "agg_num_levels": "0"
+                    },
+                    "P_m": {
+                        "machine": "mymachine",
+                        "nodes": 1,
+                        "cores": 1,
+                        "nprocmin_pernode": 1
+                    },
+                    "O": {
+                        "r": 2.31
+                    }
+                }
+            ]
+        },
+        {
+            "I": {
+                "nx": 68,
+                "ny": 38,
+                "nz": 36
+            },
+            "func_eval": [
+                {
+                    "P": {
+                        "Px": "1",
+                        "Py": "1",
+                        "Nproc": "2",
+                        "strong_threshold": "0.4138069061803129",
+                        "trunc_factor": "0.6950637722691537",
+                        "P_max_elmts": "8",
+                        "coarsen_type": "0",
+                        "relax_type": "18",
+                        "smooth_type": "5",
+                        "smooth_num_levels": "2",
+                        "interp_type": "3",
+                        "agg_num_levels": "5"
+                    },
+                    "P_m": {
+                        "machine": "mymachine",
+                        "nodes": 1,
+                        "cores": 1,
+                        "nprocmin_pernode": 1
+                    },
+                    "O": {
+                        "r": 0.45
+                    }
+                },
+                {
+                    "P": {
+                        "Px": "1",
+                        "Py": "2",
+                        "Nproc": "3",
+                        "strong_threshold": "0.0038796725961445233",
+                        "trunc_factor": "0.9816606260124837",
+                        "P_max_elmts": "7",
+                        "coarsen_type": "3",
+                        "relax_type": "16",
+                        "smooth_type": "5",
+                        "smooth_num_levels": "2",
+                        "interp_type": "3",
+                        "agg_num_levels": "3"
+                    },
+                    "P_m": {
+                        "machine": "mymachine",
+                        "nodes": 1,
+                        "cores": 1,
+                        "nprocmin_pernode": 1
+                    },
+                    "O": {
+                        "r": 0.27
+                    }
+                },
+                {
+                    "P": {
+                        "Px": "3",
+                        "Py": "1",
+                        "Nproc": "3",
+                        "strong_threshold": "0.7483111501485707",
+                        "trunc_factor": "0.1089412845381621",
+                        "P_max_elmts": "1",
+                        "coarsen_type": "8",
+                        "relax_type": "8",
+                        "smooth_type": "9",
+                        "smooth_num_levels": "0",
+                        "interp_type": "8",
+                        "agg_num_levels": "1"
+                    },
+                    "P_m": {
+                        "machine": "mymachine",
+                        "nodes": 1,
+                        "cores": 1,
+                        "nprocmin_pernode": 1
+                    },
+                    "O": {
+                        "r": 0.19
+                    }
+                },
+                {
+                    "P": {
+                        "Px": "1",
+                        "Py": "3",
+                        "Nproc": "3",
+                        "strong_threshold": "0.8060877074172821",
+                        "trunc_factor": "0.047510149324332125",
+                        "P_max_elmts": "10",
+                        "coarsen_type": "8",
+                        "relax_type": "0",
+                        "smooth_type": "6",
+                        "smooth_num_levels": "1",
+                        "interp_type": "12",
+                        "agg_num_levels": "1"
+                    },
+                    "P_m": {
+                        "machine": "mymachine",
+                        "nodes": 1,
+                        "cores": 1,
+                        "nprocmin_pernode": 1
+                    },
+                    "O": {
+                        "r": 0.63
+                    }
+                },
+                {
+                    "P": {
+                        "Px": "3",
+                        "Py": "1",
+                        "Nproc": "3",
+                        "strong_threshold": "0.3422020202519236",
+                        "trunc_factor": "0.5597723902676568",
+                        "P_max_elmts": "11",
+                        "coarsen_type": "0",
+                        "relax_type": "8",
+                        "smooth_type": "9",
+                        "smooth_num_levels": "4",
+                        "interp_type": "0",
+                        "agg_num_levels": "0"
+                    },
+                    "P_m": {
+                        "machine": "mymachine",
+                        "nodes": 1,
+                        "cores": 1,
+                        "nprocmin_pernode": 1
+                    },
+                    "O": {
+                        "r": 5.9799999999999995
+                    }
+                }
+            ]
+        }
+    ]
+}
