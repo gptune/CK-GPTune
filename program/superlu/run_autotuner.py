@@ -121,7 +121,9 @@ def main():
     # Get arguments from CK-GPTune
     # if not given by CK-GPTune: -nodes 1 -cores 4 -nprocmin_pernode 1 -ntask 1 -nrun 10 -machine youmachine -optimization 'GPTune'
     nodes = int(os.environ.get('nodes','1'))
-    cores = int(os.environ.get('cores','1'))
+    cores = int(os.environ.get('cores','4'))
+    if cores < 4:
+        cores = 4
 
     ntask = int(os.environ.get('ntask','1'))
     nruns = int(os.environ.get('nruns','10'))

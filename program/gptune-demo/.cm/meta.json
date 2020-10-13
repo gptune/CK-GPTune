@@ -9,12 +9,6 @@
     }
   },
   "run_deps": {
-    "lib-openmpi": {
-      "local": "yes",
-      "name": "OpenMPI library",
-      "tags": "lib,openmpi",
-      "version_from": [4,0,1]
-    },
     "lib-gptune": {
       "local": "yes",
       "name": "GPTune library",

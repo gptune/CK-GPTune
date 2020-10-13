@@ -1,5 +1,11 @@
 #/bin/bash
 
+echo "MPICXX:" $MPICXX
+echo "MPICC:" $MPICC
+echo "MPIF90:" $MPIF90
+echo "BLAS_LIB:" $BLAS_LIB
+echo "LAPACK_LIB:" $LAPACK_LIB
+
 rm -rf superlu_dist
 
 git clone https://github.com/xiaoyeli/superlu_dist.git

@@ -17,6 +17,7 @@
   "soft_name": "LAPACK library",
   "tags": [
     "lib",
-    "lapack"
+    "lapack",
+    "gptune"
   ]
 }
