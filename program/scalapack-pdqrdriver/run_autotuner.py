@@ -109,7 +109,7 @@ def main():
     os.environ['TUNER_NAME'] = TUNER_NAME
     #os.system("mkdir -p scalapack-driver/bin/%s; cp ../build/pdqrdriver scalapack-driver/bin/%s/.;" %(machine, machine))
     file_dir_path = str(Path(__file__).parent.absolute())
-    os.system("mkdir -p %s/scalapack-driver/bin/%s; cp $GPTUNEROOT/pdqrdriver %s/scalapack-driver/bin/%s/.;" %(file_dir_path, machine, file_dir_path, machine))
+    os.system("mkdir -p %s/scalapack-driver/bin/%s; cp $PDQRDRIVER_PATH %s/scalapack-driver/bin/%s/.;" %(file_dir_path, machine, file_dir_path, machine))
 
     nprocmax = nodes*cores-1  # YL: there is one proc doing spawning, so nodes*cores should be at least 2
     nprocmin = min(nodes*nprocmin_pernode,nprocmax-1)  # YL: ensure strictly nprocmin<nprocmax, required by the Integer space

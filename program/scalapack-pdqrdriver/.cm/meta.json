@@ -8,6 +8,19 @@
       "tags": "compiler,lang-python"
     }
   },
+  "run_deps": {
+    "pdqrdriver": {
+      "local": "yes",
+      "name": "PDQRDRIVER",
+      "tags": "pdqrdriver,gptune-driver,gptune"
+    },
+    "lib-gptune": {
+      "local": "yes",
+      "name": "GPTune library",
+      "tags": "lib,gptune",
+      "version_from": [1,0,0]
+    }
+  },
   "data_name": "scalapack-pdqrdriver",
   "main_language": "python",
   "no_compile": "yes",
