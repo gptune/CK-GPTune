@@ -133,6 +133,9 @@ def main():
     JOBID = int(os.environ.get('jobid','0'))
     TUNER_NAME = str(os.environ.get('optimization','GPTune'))
 
+    compile_deps = os.environ.get('compile_deps','')
+    print (compile_deps)
+
     print ('run_autotuner arguments\n \
             nodes: %d\
             cores: %d\

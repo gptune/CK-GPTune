@@ -35,6 +35,45 @@ def init(i):
     return {'return':0}
 
 ##############################################################################
+# parse software dependencies from deps.json in CK-GPTune program's directory
+
+def parse_dependencies(i):
+    import json
+
+    application = i['bench']
+
+    r = ck.find_path_to_data({'module_uoa':'program',
+        'data_uoa':application})
+    path_to_entry = r['path']
+    path_to_entry_meta_file = path_to_entry + "/.cm/meta.json"
+
+    print (path_to_entry_meta_file)
+
+    compile_deps_version_info = {}
+
+    with open(path_to_entry_meta_file, "r") as meta_file:
+        meta_data = json.load(meta_file)
+
+        compile_deps = meta_data['compile_deps']
+        compile_deps_list = list(compile_deps.keys())
+
+        if meta_data['process_in_tmp'] == "yes":
+            path_to_deps_file = path_to_entry + "/tmp/tmp-deps.json"
+            with open(path_to_deps_file) as deps_file:
+                deps_data = json.load(deps_file)
+
+                for dep in compile_deps_list:
+                    version = deps_data[dep]['cus']['version']
+                    version_split = deps_data[dep]['cus']['version_split']
+                    version_info = {}
+                    version_info['version'] = version
+                    version_info['version_split'] = version_split
+                    compile_deps_version_info[dep] = version_info
+
+    return (compile_deps_version_info)
+
+
+##############################################################################
 # autotune with gptune with history database
 
 def crowdtune(i):
@@ -81,6 +120,9 @@ def crowdtune(i):
         arguments['history_db']='yes'
         #arguments = {'history_db':'yes'}
         #print (arguments)
+
+        compile_deps_version_info = parse_dependencies(i)
+        arguments['compile_deps'] = compile_deps_version_info
 
         r=ck.access({'action':'run',
                      'module_uoa':'program',
