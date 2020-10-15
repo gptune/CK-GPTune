@@ -1,0 +1,9 @@
+Currently the installation ($ ck compile ck-gptune:program:scalapack-pdqrdriver)
+of scalapack pdqrdriver is done as part of the gptune installation.
+
+We may not need to install whole gptune framework for this pdqrdriver example,
+because we can install the GPTune framework using the gptune package with
+command $ ck install ck-gptune:package:gptune.
+
+But, as of now we install the whole package for a quick development.
+We can consider this issue later.

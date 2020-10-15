@@ -1,0 +1,618 @@
+{
+  "compiler": {
+    "local": "yes",
+    "name": "C compiler",
+    "sort": 20,
+    "tags": "compiler,lang-c",
+    "detected_ver": "9.3.0",
+    "choices": [
+      "c57457345c386778"
+    ],
+    "cus": {
+      "add_only_with_version": "yes",
+      "add_to_path": "yes",
+      "build_dir_name": "gcc",
+      "can_strip_dynamic_lib": "yes",
+      "check_that_exists": "yes",
+      "ck_version": 10,
+      "env_prefix": "CK_ENV_COMPILER_GCC",
+      "full_path": "/usr/bin/gcc-9",
+      "languages": [
+        "C",
+        "CPP"
+      ],
+      "limit_recursion_dir_search": {
+        "linux": 3,
+        "win": 4
+      },
+      "only_for_target_os_tags": [
+        "mingw",
+        "windows",
+        "linux"
+      ],
+      "retarget": "no",
+      "search_numeric_ext_on_linux": "yes",
+      "skip_path": "yes",
+      "soft_file": {
+        "linux": "gcc",
+        "win": "gcc.exe"
+      },
+      "soft_file_from_host_os": "yes",
+      "soft_path_example": {
+        "linux": "/usr/bin/gcc",
+        "win": "C:\\Program Files\\GCC-4.9.2-x64\\bin\\gcc.exe"
+      },
+      "soft_version_cmd": {
+        "linux": "--version > $#filename#$ 2>&1",
+        "win": " --version > $#filename#$ 2>&1"
+      },
+      "sort": 100,
+      "tool_postfix": "-9",
+      "tool_postfix_configured": "yes",
+      "tool_prefix": "",
+      "tool_prefix_configured": "yes",
+      "version": "9.3.0",
+      "version_split": [
+        9,
+        3,
+        0
+      ]
+    },
+    "dict": {
+      "customize": {
+        "add_only_with_version": "yes",
+        "add_to_path": "yes",
+        "build_dir_name": "gcc",
+        "can_strip_dynamic_lib": "yes",
+        "check_that_exists": "yes",
+        "ck_version": 10,
+        "env_prefix": "CK_ENV_COMPILER_GCC",
+        "full_path": "/usr/bin/gcc-9",
+        "languages": [
+          "C",
+          "CPP"
+        ],
+        "limit_recursion_dir_search": {
+          "linux": 3,
+          "win": 4
+        },
+        "only_for_target_os_tags": [
+          "mingw",
+          "windows",
+          "linux"
+        ],
+        "retarget": "no",
+        "search_numeric_ext_on_linux": "yes",
+        "skip_path": "yes",
+        "soft_file": {
+          "linux": "gcc",
+          "win": "gcc.exe"
+        },
+        "soft_file_from_host_os": "yes",
+        "soft_path_example": {
+          "linux": "/usr/bin/gcc",
+          "win": "C:\\Program Files\\GCC-4.9.2-x64\\bin\\gcc.exe"
+        },
+        "soft_version_cmd": {
+          "linux": "--version > $#filename#$ 2>&1",
+          "win": " --version > $#filename#$ 2>&1"
+        },
+        "sort": 100,
+        "tool_postfix": "-9",
+        "tool_postfix_configured": "yes",
+        "tool_prefix": "",
+        "tool_prefix_configured": "yes",
+        "version": "9.3.0",
+        "version_split": [
+          9,
+          3,
+          0
+        ]
+      },
+      "deps": {},
+      "env": {
+        "CK_AR": "ar",
+        "CK_ASM_EXT": ".s",
+        "CK_CC": "gcc-9",
+        "CK_CC_FULL_PATH": "/usr/bin/gcc-9",
+        "CK_COMPILER_FLAGS_OBLIGATORY": "",
+        "CK_COMPILER_FLAG_CPP0X": "-std=c++0x",
+        "CK_COMPILER_FLAG_CPP11": "-std=c++11",
+        "CK_COMPILER_FLAG_CPP14": "-std=c++14",
+        "CK_COMPILER_FLAG_CPP1Z": "-std=c++1z",
+        "CK_COMPILER_FLAG_GPROF": "-pg",
+        "CK_COMPILER_FLAG_OPENMP": "-fopenmp",
+        "CK_COMPILER_FLAG_PLUGIN": "-fplugin=",
+        "CK_COMPILER_FLAG_PTHREAD_LIB": "-lpthread",
+        "CK_COMPILER_FLAG_STD90": "-std=c90",
+        "CK_COMPILER_FLAG_STD99": "-std=c99",
+        "CK_COMPILER_FLAG_STD_GNU89": "-std=gnu89",
+        "CK_COMPILER_POSTFIX": "-9",
+        "CK_COMPILER_TOOLCHAIN_NAME": "gcc",
+        "CK_COMPILER_VERSION": "9.3.0",
+        "CK_CXX": "g++-9",
+        "CK_CXX_FULL_PATH": "/usr/bin/g++-9",
+        "CK_DLL_EXT": ".so",
+        "CK_ENV_COMPILER_GCC": "/usr",
+        "CK_ENV_COMPILER_GCC_LIB": "/usr/lib/gcc/x86_64-linux-gnu/9",
+        "CK_EXE_EXT": ".out",
+        "CK_EXTRA_LIB_ATOMIC": "-latomic",
+        "CK_EXTRA_LIB_DL": "-ldl",
+        "CK_EXTRA_LIB_M": "-lm",
+        "CK_EXTRA_LIB_RT": "-lrt",
+        "CK_FLAGS_CREATE_ASM": "-S",
+        "CK_FLAGS_CREATE_OBJ": "-c",
+        "CK_FLAGS_DLL": "-shared -fPIC",
+        "CK_FLAGS_DLL_EXTRA": "",
+        "CK_FLAGS_DYNAMIC_BIN": " ",
+        "CK_FLAGS_OUTPUT": "-o ",
+        "CK_FLAGS_STATIC_BIN": "-static -fPIC",
+        "CK_FLAGS_STATIC_LIB": "-fPIC",
+        "CK_FLAG_PREFIX_INCLUDE": "-I",
+        "CK_FLAG_PREFIX_LIB_DIR": "-L",
+        "CK_FLAG_PREFIX_VAR": "-D",
+        "CK_GPROF_OUT_FILE": "gmon.out",
+        "CK_LB": "ar rcs",
+        "CK_LB_OUTPUT": "-o ",
+        "CK_LD": "ld",
+        "CK_LD_FLAGS_EXTRA": "",
+        "CK_LIB_EXT": ".a",
+        "CK_LINKER_FLAG_OPENMP": "-lgomp -lrt",
+        "CK_MAKE": "make",
+        "CK_OBJDUMP": "objdump -d",
+        "CK_OBJ_EXT": ".o",
+        "CK_OPT_ALL_WARNINGS": "-Wall",
+        "CK_OPT_SIZE": "-Os",
+        "CK_OPT_SPEED": "-O3",
+        "CK_OPT_SPEED_SAFE": "-O2",
+        "CK_OPT_UNWIND": " ",
+        "CK_PLUGIN_FLAG": "-fplugin=",
+        "CK_PROFILER": "gprof",
+        "CK_RANLIB": "ranlib"
+      },
+      "env_script": "env.sh",
+      "install_location": "",
+      "setup": {
+        "host_os_uoa": "4258b5fe54828a50",
+        "target_os_bits": "64",
+        "target_os_uoa": "4258b5fe54828a50",
+        "version": "9.3.0",
+        "version_split": [
+          9,
+          3,
+          0
+        ]
+      },
+      "soft_uoa": "3a8a82fa40bf992d",
+      "tags": [
+        "64bits",
+        "compiler",
+        "gcc",
+        "host-os-linux-64",
+        "lang-c",
+        "lang-cpp",
+        "target-os-linux-64",
+        "v9",
+        "v9.3",
+        "v9.3.0"
+      ],
+      "data_name": "GNU C compiler",
+      "soft_alias": "compiler.gcc"
+    },
+    "ver": "9.3.0",
+    "uoa": "c57457345c386778",
+    "num_entries": 1,
+    "build_dir_name": "gcc",
+    "bat": ". /home/ycho/CK/local/env/c57457345c386778/env.sh\n"
+  },
+  "openmpi": {
+    "local": "yes",
+    "name": "OpenMPI library",
+    "tags": "lib,mpi,openmpi",
+    "version_from": [
+      4,
+      0,
+      1
+    ],
+    "choices": [
+      "c3c18f57247caa8c"
+    ],
+    "cus": {
+      "add_to_path": "yes",
+      "check_that_exists": "yes",
+      "ck_version": 10,
+      "env_prefix": "CK_ENV_LIB_MPI",
+      "full_path": "/home/ycho/openmpi/lib/libmpi.so",
+      "limit_recursion_dir_search": {
+        "linux": 4,
+        "win": 4
+      },
+      "path_bin": "/home/ycho/openmpi/bin",
+      "path_include": "/home/ycho/openmpi/include",
+      "path_lib": "/home/ycho/openmpi/lib",
+      "skip_path": "yes",
+      "soft_file": {
+        "linux": "libmpi.so",
+        "win": "libmpi.dll"
+      },
+      "soft_path_example": {
+        "linux": "",
+        "win": ""
+      },
+      "version": "40",
+      "version_split": [
+        40
+      ]
+    },
+    "dict": {
+      "customize": {
+        "add_to_path": "yes",
+        "check_that_exists": "yes",
+        "ck_version": 10,
+        "env_prefix": "CK_ENV_LIB_MPI",
+        "full_path": "/home/ycho/openmpi/lib/libmpi.so",
+        "limit_recursion_dir_search": {
+          "linux": 4,
+          "win": 4
+        },
+        "path_bin": "/home/ycho/openmpi/bin",
+        "path_include": "/home/ycho/openmpi/include",
+        "path_lib": "/home/ycho/openmpi/lib",
+        "skip_path": "yes",
+        "soft_file": {
+          "linux": "libmpi.so",
+          "win": "libmpi.dll"
+        },
+        "soft_path_example": {
+          "linux": "",
+          "win": ""
+        },
+        "version": "40",
+        "version_split": [
+          40
+        ]
+      },
+      "deps": {},
+      "env": {
+        "CK_ENV_LIB_MPI": "/home/ycho/openmpi",
+        "CK_ENV_LIB_MPI_CC": "/home/ycho/openmpi/bin/mpicc.openmpi",
+        "MPICC": "/home/ycho/openmpi/bin/mpicc",
+        "MPICXX": "/home/ycho/openmpi/bin/mpicxx",
+        "MPIF90": "/home/ycho/openmpi/bin/mpif90",
+        "MPIRUN": "/home/ycho/openmpi/bin/mpirun"
+      },
+      "env_script": "env.sh",
+      "install_location": "",
+      "setup": {
+        "host_os_uoa": "4258b5fe54828a50",
+        "target_os_bits": "64",
+        "target_os_uoa": "4258b5fe54828a50",
+        "version": "40",
+        "version_split": [
+          40
+        ]
+      },
+      "soft_uoa": "a6a026dbcd685ef0",
+      "tags": [
+        "64bits",
+        "host-os-linux-64",
+        "lib",
+        "mpi",
+        "openmpi",
+        "target-os-linux-64",
+        "v40"
+      ],
+      "data_name": "MPI library",
+      "soft_alias": "lib.openmpi.gptune"
+    },
+    "ver": "40",
+    "uoa": "c3c18f57247caa8c",
+    "num_entries": 1,
+    "bat": ". /home/ycho/CK/local/env/c3c18f57247caa8c/env.sh\n"
+  },
+  "blas": {
+    "local": "yes",
+    "name": "BLAS",
+    "sort": 30,
+    "tags": "lib,blas,cblas",
+    "choices": [
+      "6a75d6aa8e4bfc6e"
+    ],
+    "cus": {
+      "check_that_exists": "yes",
+      "ck_version": 10,
+      "dynamic_lib": "libblas.so",
+      "env_prefix": "CK_ENV_LIB_BLAS",
+      "file_root_name": "libblas",
+      "full_path": "/usr/lib/x86_64-linux-gnu/blas/libblas.so",
+      "include_file": "cblas.h",
+      "include_name": "cblas.h",
+      "limit_recursion_dir_search": {
+        "linux": 3
+      },
+      "path_bin": "/usr/bin",
+      "path_include": "/usr/include/x86_64-linux-gnu",
+      "path_lib": "/usr/lib/x86_64-linux-gnu/blas",
+      "skip_path": "yes",
+      "soft_file": {
+        "linux": "libblas$#file_ext_dll#$"
+      },
+      "soft_path_example": {
+        "linux": "/usr/lib/libblas.so"
+      },
+      "static_lib": "libblas.a",
+      "version": "api-3.9.0",
+      "version_split": [
+        0,
+        3,
+        9,
+        0
+      ]
+    },
+    "dict": {
+      "customize": {
+        "check_that_exists": "yes",
+        "ck_version": 10,
+        "dynamic_lib": "libblas.so",
+        "env_prefix": "CK_ENV_LIB_BLAS",
+        "file_root_name": "libblas",
+        "full_path": "/usr/lib/x86_64-linux-gnu/blas/libblas.so",
+        "include_file": "cblas.h",
+        "include_name": "cblas.h",
+        "limit_recursion_dir_search": {
+          "linux": 3
+        },
+        "path_bin": "/usr/bin",
+        "path_include": "/usr/include/x86_64-linux-gnu",
+        "path_lib": "/usr/lib/x86_64-linux-gnu/blas",
+        "skip_path": "yes",
+        "soft_file": {
+          "linux": "libblas$#file_ext_dll#$"
+        },
+        "soft_path_example": {
+          "linux": "/usr/lib/libblas.so"
+        },
+        "static_lib": "libblas.a",
+        "version": "api-3.9.0",
+        "version_split": [
+          0,
+          3,
+          9,
+          0
+        ]
+      },
+      "deps": {},
+      "env": {
+        "CK_ENV_LIB_BLAS": "/usr",
+        "CK_ENV_LIB_BLAS_BIN": "/usr/bin",
+        "CK_ENV_LIB_BLAS_DYNAMIC_NAME": "libblas.so",
+        "CK_ENV_LIB_BLAS_INCLUDE_NAME": "cblas.h",
+        "CK_ENV_LIB_BLAS_STATIC_NAME": "libblas.a"
+      },
+      "env_script": "env.sh",
+      "install_location": "",
+      "setup": {
+        "host_os_uoa": "4258b5fe54828a50",
+        "target_os_bits": "64",
+        "target_os_uoa": "4258b5fe54828a50",
+        "version": "api-3.9.0",
+        "version_split": [
+          0,
+          3,
+          9,
+          0
+        ]
+      },
+      "soft_uoa": "1d8d2740ebbb02a2",
+      "tags": [
+        "64bits",
+        "blas",
+        "blas",
+        "cblas",
+        "host-os-linux-64",
+        "lib",
+        "no-openblas",
+        "target-os-linux-64",
+        "v0",
+        "v0.3",
+        "v0.3.9",
+        "v0.3.9.0"
+      ],
+      "data_name": "BLAS library",
+      "soft_alias": "lib.blas"
+    },
+    "ver": "api-3.9.0",
+    "uoa": "6a75d6aa8e4bfc6e",
+    "num_entries": 1,
+    "bat": ". /home/ycho/CK/local/env/6a75d6aa8e4bfc6e/env.sh\n"
+  },
+  "lapack": {
+    "local": "yes",
+    "name": "LAPACK",
+    "sort": 40,
+    "tags": "lib,lapack",
+    "choices": [
+      "a5f7ea0461d91931",
+      "a1b1c4929b1f815f"
+    ],
+    "cus": {
+      "add_include_path": "yes",
+      "check_that_exists": "yes",
+      "ck_version": 10,
+      "env_prefix": "CK_ENV_LIB_LAPACK",
+      "full_path": "/usr/lib/x86_64-linux-gnu/lapack/liblapack.so",
+      "limit_recursion_dir_search": {
+        "linux": 4,
+        "win": 4
+      },
+      "path_lib": "/usr/lib/x86_64-linux-gnu/lapack",
+      "skip_path": "yes",
+      "soft_file": {
+        "linux": "liblapack$#file_ext_dll#$",
+        "win": "liblapack.lib"
+      },
+      "version": "api-3.9.0",
+      "version_split": [
+        0,
+        3,
+        9,
+        0
+      ]
+    },
+    "dict": {
+      "customize": {
+        "add_include_path": "yes",
+        "check_that_exists": "yes",
+        "ck_version": 10,
+        "env_prefix": "CK_ENV_LIB_LAPACK",
+        "full_path": "/usr/lib/x86_64-linux-gnu/lapack/liblapack.so",
+        "limit_recursion_dir_search": {
+          "linux": 4,
+          "win": 4
+        },
+        "path_lib": "/usr/lib/x86_64-linux-gnu/lapack",
+        "skip_path": "yes",
+        "soft_file": {
+          "linux": "liblapack$#file_ext_dll#$",
+          "win": "liblapack.lib"
+        },
+        "version": "api-3.9.0",
+        "version_split": [
+          0,
+          3,
+          9,
+          0
+        ]
+      },
+      "deps": {},
+      "env": {
+        "CK_ENV_LIB_LAPACK": "/usr/lib/x86_64-linux-gnu",
+        "LAPACK_LIB": "/usr/lib/x86_64-linux-gnu/lapack/liblapack.so"
+      },
+      "env_script": "env.sh",
+      "install_location": "",
+      "setup": {
+        "host_os_uoa": "4258b5fe54828a50",
+        "target_os_bits": "64",
+        "target_os_uoa": "4258b5fe54828a50",
+        "version": "api-3.9.0",
+        "version_split": [
+          0,
+          3,
+          9,
+          0
+        ]
+      },
+      "soft_uoa": "85c824c669a435ae",
+      "tags": [
+        "64bits",
+        "host-os-linux-64",
+        "lapack",
+        "lib",
+        "target-os-linux-64",
+        "v0",
+        "v0.3",
+        "v0.3.9",
+        "v0.3.9.0"
+      ],
+      "data_name": "LAPACK library",
+      "soft_alias": "lib.lapack.gptune"
+    },
+    "ver": "api-3.9.0",
+    "uoa": "a1b1c4929b1f815f",
+    "num_entries": 2,
+    "bat": ". /home/ycho/CK/local/env/a1b1c4929b1f815f/env.sh\n"
+  },
+  "scalapack": {
+    "local": "yes",
+    "name": "SCALAPACK",
+    "sort": 50,
+    "tags": "lib,scalapack",
+    "choices": [
+      "03434a946b97dfdf"
+    ],
+    "cus": {
+      "add_include_path": "yes",
+      "check_that_exists": "yes",
+      "ck_version": 10,
+      "env_prefix": "CK_ENV_LIB_SCALAPACK",
+      "full_path": "/home/ycho/Research/GPTune/scalapack-2.1.0/build/install/lib/libscalapack.so",
+      "limit_recursion_dir_search": {
+        "linux": 8,
+        "win": 8
+      },
+      "path_lib": "/home/ycho/Research/GPTune/scalapack-2.1.0/build/install/lib",
+      "skip_path": "yes",
+      "soft_file": {
+        "linux": "libscalapack$#file_ext_dll#$",
+        "win": "libscalapack.lib"
+      },
+      "version": "2.1.0",
+      "version_split": [
+        2,
+        1,
+        0
+      ]
+    },
+    "dict": {
+      "customize": {
+        "add_include_path": "yes",
+        "check_that_exists": "yes",
+        "ck_version": 10,
+        "env_prefix": "CK_ENV_LIB_SCALAPACK",
+        "full_path": "/home/ycho/Research/GPTune/scalapack-2.1.0/build/install/lib/libscalapack.so",
+        "limit_recursion_dir_search": {
+          "linux": 8,
+          "win": 8
+        },
+        "path_lib": "/home/ycho/Research/GPTune/scalapack-2.1.0/build/install/lib",
+        "skip_path": "yes",
+        "soft_file": {
+          "linux": "libscalapack$#file_ext_dll#$",
+          "win": "libscalapack.lib"
+        },
+        "version": "2.1.0",
+        "version_split": [
+          2,
+          1,
+          0
+        ]
+      },
+      "deps": {},
+      "env": {
+        "CK_ENV_LIB_SCALAPACK": "/home/ycho/Research/GPTune/scalapack-2.1.0/build/install",
+        "SCALAPACK_LIB": "/home/ycho/Research/GPTune/scalapack-2.1.0/build/install/lib/libscalapack.so"
+      },
+      "env_script": "env.sh",
+      "install_location": "",
+      "setup": {
+        "host_os_uoa": "4258b5fe54828a50",
+        "target_os_bits": "64",
+        "target_os_uoa": "4258b5fe54828a50",
+        "version": "2.1.0",
+        "version_split": [
+          2,
+          1,
+          0
+        ]
+      },
+      "soft_uoa": "b0a236d603434196",
+      "tags": [
+        "64bits",
+        "host-os-linux-64",
+        "lib",
+        "scalapack",
+        "target-os-linux-64",
+        "v2",
+        "v2.1",
+        "v2.1.0"
+      ],
+      "data_name": "SCALAPACK library",
+      "soft_alias": "lib.scalapack.gptune"
+    },
+    "ver": "2.1.0",
+    "uoa": "03434a946b97dfdf",
+    "num_entries": 1,
+    "bat": ". /home/ycho/CK/local/env/03434a946b97dfdf/env.sh\n"
+  }
+}

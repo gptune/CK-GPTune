@@ -1,0 +1,362 @@
+{
+  "name": "pddrive_spawn",
+  "perf_data": [
+    {
+      "I": {
+        "matrix": "big.rua"
+      },
+      "func_eval": [
+        {
+          "P": {
+            "COLPERM": "4",
+            "LOOKAHEAD": "18",
+            "nproc": "1",
+            "nprows": "1",
+            "NSUP": "124",
+            "NREL": "39"
+          },
+          "P_m": {
+            "machine": "intel72",
+            "nodes": 1,
+            "cores": 1,
+            "nprocmin_pernode": 1
+          },
+          "P_s": {
+            "compile_deps": {
+              "python": {
+                "version": "3.8.5",
+                "version_split": [
+                  3,
+                  8,
+                  5
+                ]
+              },
+              "openmpi": {
+                "version": "40",
+                "version_split": [
+                  40
+                ]
+              },
+              "blas": {
+                "version": "api-3.9.0",
+                "version_split": [
+                  0,
+                  3,
+                  9,
+                  0
+                ]
+              },
+              "lapack": {
+                "version": "api-3.9.0",
+                "version_split": [
+                  0,
+                  3,
+                  9,
+                  0
+                ]
+              }
+            }
+          },
+          "O": {
+            "runtime": 0.05932922288775444,
+            "memory": 4.781531810760498
+          }
+        },
+        {
+          "P": {
+            "COLPERM": "2",
+            "LOOKAHEAD": "5",
+            "nproc": "3",
+            "nprows": "3",
+            "NSUP": "31",
+            "NREL": "10"
+          },
+          "P_m": {
+            "machine": "intel72",
+            "nodes": 1,
+            "cores": 1,
+            "nprocmin_pernode": 1
+          },
+          "P_s": {
+            "compile_deps": {
+              "python": {
+                "version": "3.8.5",
+                "version_split": [
+                  3,
+                  8,
+                  5
+                ]
+              },
+              "openmpi": {
+                "version": "40",
+                "version_split": [
+                  40
+                ]
+              },
+              "blas": {
+                "version": "api-3.9.0",
+                "version_split": [
+                  0,
+                  3,
+                  9,
+                  0
+                ]
+              },
+              "lapack": {
+                "version": "api-3.9.0",
+                "version_split": [
+                  0,
+                  3,
+                  9,
+                  0
+                ]
+              }
+            }
+          },
+          "O": {
+            "runtime": 0.028237653896212578,
+            "memory": 2.621151924133301
+          }
+        }
+      ]
+    },
+    {
+      "I": {
+        "matrix": "g4.rua"
+      },
+      "func_eval": [
+        {
+          "P": {
+            "COLPERM": "2",
+            "LOOKAHEAD": "16",
+            "nproc": "3",
+            "nprows": "2",
+            "NSUP": "281",
+            "NREL": "35"
+          },
+          "P_m": {
+            "machine": "intel72",
+            "nodes": 1,
+            "cores": 1,
+            "nprocmin_pernode": 1
+          },
+          "P_s": {
+            "compile_deps": {
+              "python": {
+                "version": "3.8.5",
+                "version_split": [
+                  3,
+                  8,
+                  5
+                ]
+              },
+              "openmpi": {
+                "version": "40",
+                "version_split": [
+                  40
+                ]
+              },
+              "blas": {
+                "version": "api-3.9.0",
+                "version_split": [
+                  0,
+                  3,
+                  9,
+                  0
+                ]
+              },
+              "lapack": {
+                "version": "api-3.9.0",
+                "version_split": [
+                  0,
+                  3,
+                  9,
+                  0
+                ]
+              }
+            }
+          },
+          "O": {
+            "runtime": 0.0007110980222932994,
+            "memory": 26.021432876586914
+          }
+        },
+        {
+          "P": {
+            "COLPERM": "2",
+            "LOOKAHEAD": "5",
+            "nproc": "3",
+            "nprows": "3",
+            "NSUP": "30",
+            "NREL": "10"
+          },
+          "P_m": {
+            "machine": "intel72",
+            "nodes": 1,
+            "cores": 1,
+            "nprocmin_pernode": 1
+          },
+          "P_s": {
+            "compile_deps": {
+              "python": {
+                "version": "3.8.5",
+                "version_split": [
+                  3,
+                  8,
+                  5
+                ]
+              },
+              "openmpi": {
+                "version": "40",
+                "version_split": [
+                  40
+                ]
+              },
+              "blas": {
+                "version": "api-3.9.0",
+                "version_split": [
+                  0,
+                  3,
+                  9,
+                  0
+                ]
+              },
+              "lapack": {
+                "version": "api-3.9.0",
+                "version_split": [
+                  0,
+                  3,
+                  9,
+                  0
+                ]
+              }
+            }
+          },
+          "O": {
+            "runtime": 0.000375259987777099,
+            "memory": 0.2293040007352829
+          }
+        }
+      ]
+    },
+    {
+      "I": {
+        "matrix": "g20.rua"
+      },
+      "func_eval": [
+        {
+          "P": {
+            "COLPERM": "4",
+            "LOOKAHEAD": "19",
+            "nproc": "3",
+            "nprows": "2",
+            "NSUP": "100",
+            "NREL": "30"
+          },
+          "P_m": {
+            "machine": "intel72",
+            "nodes": 1,
+            "cores": 1,
+            "nprocmin_pernode": 1
+          },
+          "P_s": {
+            "compile_deps": {
+              "python": {
+                "version": "3.8.5",
+                "version_split": [
+                  3,
+                  8,
+                  5
+                ]
+              },
+              "openmpi": {
+                "version": "40",
+                "version_split": [
+                  40
+                ]
+              },
+              "blas": {
+                "version": "api-3.9.0",
+                "version_split": [
+                  0,
+                  3,
+                  9,
+                  0
+                ]
+              },
+              "lapack": {
+                "version": "api-3.9.0",
+                "version_split": [
+                  0,
+                  3,
+                  9,
+                  0
+                ]
+              }
+            }
+          },
+          "O": {
+            "runtime": 0.0014442909741774201,
+            "memory": 4.609208106994629
+          }
+        },
+        {
+          "P": {
+            "COLPERM": "2",
+            "LOOKAHEAD": "5",
+            "nproc": "3",
+            "nprows": "3",
+            "NSUP": "30",
+            "NREL": "10"
+          },
+          "P_m": {
+            "machine": "intel72",
+            "nodes": 1,
+            "cores": 1,
+            "nprocmin_pernode": 1
+          },
+          "P_s": {
+            "compile_deps": {
+              "python": {
+                "version": "3.8.5",
+                "version_split": [
+                  3,
+                  8,
+                  5
+                ]
+              },
+              "openmpi": {
+                "version": "40",
+                "version_split": [
+                  40
+                ]
+              },
+              "blas": {
+                "version": "api-3.9.0",
+                "version_split": [
+                  0,
+                  3,
+                  9,
+                  0
+                ]
+              },
+              "lapack": {
+                "version": "api-3.9.0",
+                "version_split": [
+                  0,
+                  3,
+                  9,
+                  0
+                ]
+              }
+            }
+          },
+          "O": {
+            "runtime": 0.002084848005324602,
+            "memory": 0.4727959930896759
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,18 +1,48 @@
 {
   "backup_data_uid": "8bf9aa0ad04427bb",
   "build_compiler_vars": {},
+  "compile_cmds": {
+    "default": {
+      "cmd": "bash ../install_scalapack$#script_ext#$"
+    }
+  },
   "compile_deps": {
+    "compiler": {
+      "local": "yes",
+      "name": "C compiler",
+      "sort": 20,
+      "tags": "compiler,lang-c"
+    },
+    "openmpi": {
+      "local": "yes",
+      "name": "OpenMPI library",
+      "tags": "lib,mpi,openmpi",
+      "version_from": [4,0,1]
+    },
+    "blas": {
+      "local": "yes",
+      "name": "BLAS",
+      "sort": 30,
+      "tags": "lib,blas,cblas"
+    },
+    "lapack": {
+      "local": "yes",
+      "name": "LAPACK",
+      "sort": 40,
+      "tags": "lib,lapack"
+    },
+    "scalapack": {
+      "local": "yes",
+      "name": "SCALAPACK",
+      "sort": 50,
+      "tags": "lib,scalapack"
+    }
+  },
+  "run_deps": {
     "python": {
       "local": "yes",
       "name": "Python",
       "tags": "compiler,lang-python"
-    }
-  },
-  "run_deps": {
-    "pdqrdriver": {
-      "local": "yes",
-      "name": "PDQRDRIVER",
-      "tags": "pdqrdriver,gptune-driver,gptune"
     },
     "lib-gptune": {
       "local": "yes",
@@ -53,5 +83,6 @@
     "program",
     "lang-python"
   ],
-  "template_type": "Python program workflow"
+  "template_type": "Python program workflow",
+  "use_compile_script": "yes"
 }

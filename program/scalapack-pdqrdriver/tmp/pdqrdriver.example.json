@@ -1,0 +1,265 @@
+{
+  "name": "pdqrdriver",
+  "perf_data": [
+    {
+      "I": {
+        "m": 816,
+        "n": 599
+      },
+      "func_eval": [
+        {
+          "P": {
+            "mb": 6,
+            "nb": 16,
+            "nproc": 3,
+            "p": 2
+          },
+          "P_m": {
+            "machine": "intel72",
+            "nodes": 1,
+            "cores": 1,
+            "nprocmin_pernode": 1
+          },
+          "P_s": {
+            "compile_deps": {
+              "compiler": {
+                "version": "9.3.0",
+                "version_split": [
+                  9,
+                  3,
+                  0
+                ]
+              },
+              "openmpi": {
+                "version": "40",
+                "version_split": [
+                  40
+                ]
+              },
+              "blas": {
+                "version": "api-3.9.0",
+                "version_split": [
+                  0,
+                  3,
+                  9,
+                  0
+                ]
+              },
+              "lapack": {
+                "version": "api-3.9.0",
+                "version_split": [
+                  0,
+                  3,
+                  9,
+                  0
+                ]
+              },
+              "scalapack": {
+                "version": "2.1.0",
+                "version_split": [
+                  2,
+                  1,
+                  0
+                ]
+              }
+            }
+          },
+          "O": {
+            "r": 0.132027
+          }
+        },
+        {
+          "P": {
+            "mb": 16,
+            "nb": 5,
+            "nproc": 1,
+            "p": 1
+          },
+          "P_m": {
+            "machine": "intel72",
+            "nodes": 1,
+            "cores": 1,
+            "nprocmin_pernode": 1
+          },
+          "P_s": {
+            "compile_deps": {
+              "compiler": {
+                "version": "9.3.0",
+                "version_split": [
+                  9,
+                  3,
+                  0
+                ]
+              },
+              "openmpi": {
+                "version": "40",
+                "version_split": [
+                  40
+                ]
+              },
+              "blas": {
+                "version": "api-3.9.0",
+                "version_split": [
+                  0,
+                  3,
+                  9,
+                  0
+                ]
+              },
+              "lapack": {
+                "version": "api-3.9.0",
+                "version_split": [
+                  0,
+                  3,
+                  9,
+                  0
+                ]
+              },
+              "scalapack": {
+                "version": "2.1.0",
+                "version_split": [
+                  2,
+                  1,
+                  0
+                ]
+              }
+            }
+          },
+          "O": {
+            "r": 0.208392
+          }
+        }
+      ]
+    },
+    {
+      "I": {
+        "m": 669,
+        "n": 164
+      },
+      "func_eval": [
+        {
+          "P": {
+            "mb": 2,
+            "nb": 5,
+            "nproc": 2,
+            "p": 1
+          },
+          "P_m": {
+            "machine": "intel72",
+            "nodes": 1,
+            "cores": 1,
+            "nprocmin_pernode": 1
+          },
+          "P_s": {
+            "compile_deps": {
+              "compiler": {
+                "version": "9.3.0",
+                "version_split": [
+                  9,
+                  3,
+                  0
+                ]
+              },
+              "openmpi": {
+                "version": "40",
+                "version_split": [
+                  40
+                ]
+              },
+              "blas": {
+                "version": "api-3.9.0",
+                "version_split": [
+                  0,
+                  3,
+                  9,
+                  0
+                ]
+              },
+              "lapack": {
+                "version": "api-3.9.0",
+                "version_split": [
+                  0,
+                  3,
+                  9,
+                  0
+                ]
+              },
+              "scalapack": {
+                "version": "2.1.0",
+                "version_split": [
+                  2,
+                  1,
+                  0
+                ]
+              }
+            }
+          },
+          "O": {
+            "r": 0.0154
+          }
+        },
+        {
+          "P": {
+            "mb": 15,
+            "nb": 1,
+            "nproc": 1,
+            "p": 1
+          },
+          "P_m": {
+            "machine": "intel72",
+            "nodes": 1,
+            "cores": 1,
+            "nprocmin_pernode": 1
+          },
+          "P_s": {
+            "compile_deps": {
+              "compiler": {
+                "version": "9.3.0",
+                "version_split": [
+                  9,
+                  3,
+                  0
+                ]
+              },
+              "openmpi": {
+                "version": "40",
+                "version_split": [
+                  40
+                ]
+              },
+              "blas": {
+                "version": "api-3.9.0",
+                "version_split": [
+                  0,
+                  3,
+                  9,
+                  0
+                ]
+              },
+              "lapack": {
+                "version": "api-3.9.0",
+                "version_split": [
+                  0,
+                  3,
+                  9,
+                  0
+                ]
+              },
+              "scalapack": {
+                "version": "2.1.0",
+                "version_split": [
+                  2,
+                  1,
+                  0
+                ]
+              }
+            }
+          },
+          "O": {
+            "r": 0.02114
+          }
+        }
+      ]
+    }
+  ]
+}
