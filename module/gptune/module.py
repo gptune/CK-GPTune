@@ -39,6 +39,8 @@ def init(i):
 
 def parse_dependencies(i):
     import json
+    import os.path
+    from os import path
 
     application = i['bench']
 
@@ -59,16 +61,17 @@ def parse_dependencies(i):
 
         if meta_data['process_in_tmp'] == "yes":
             path_to_deps_file = path_to_entry + "/tmp/tmp-deps.json"
-            with open(path_to_deps_file) as deps_file:
-                deps_data = json.load(deps_file)
+            if path.exists(path_to_deps_file):
+                with open(path_to_deps_file) as deps_file:
+                    deps_data = json.load(deps_file)
 
-                for dep in compile_deps_list:
-                    version = deps_data[dep]['cus']['version']
-                    version_split = deps_data[dep]['cus']['version_split']
-                    version_info = {}
-                    version_info['version'] = version
-                    version_info['version_split'] = version_split
-                    compile_deps_version_info[dep] = version_info
+                    for dep in compile_deps_list:
+                        version = deps_data[dep]['cus']['version']
+                        version_split = deps_data[dep]['cus']['version_split']
+                        version_info = {}
+                        version_info['version'] = version
+                        version_info['version_split'] = version_split
+                        compile_deps_version_info[dep] = version_info
 
     return (compile_deps_version_info)
 
@@ -117,12 +120,12 @@ def crowdtune(i):
         arguments = {}
         for argument_key in argument_keys:
             arguments[argument_key] = i[argument_key]
-        arguments['history_db']='yes'
-        #arguments = {'history_db':'yes'}
-        #print (arguments)
+        arguments['CKGPTUNE_HISTORY_DB'] = 'yes'
+        arguments['CKGPTUNE_APPLICATION_NAME'] = application
 
         compile_deps_version_info = parse_dependencies(i)
-        arguments['compile_deps'] = compile_deps_version_info
+        arguments['CKGPTUNE_COMPILE_DEPS'] = compile_deps_version_info
+        arguments['CKGPTUNE_MACHINE_NAME'] = i['machine']
 
         r=ck.access({'action':'run',
                      'module_uoa':'program',

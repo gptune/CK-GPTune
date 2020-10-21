@@ -152,12 +152,6 @@ def main():
     options['verbose'] = False
     options.validate(computer=computer)
 
-    if (os.environ.get('history_db','') == 'yes'):
-        print ('set history database mode')
-        options['history_db'] = 1
-        options['application_name'] = 'pdqrdriver'
-        #options['history_db_path'] = './'
-
     data = Data(problem)
     giventask = [[randint(mmin,mmax),randint(nmin,nmax)] for i in range(ntask)]
 

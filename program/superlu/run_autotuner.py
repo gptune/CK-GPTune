@@ -197,14 +197,6 @@ def main():
     options['search_more_samples'] = 4
     options.validate(computer = computer)
 
-    #options['history_db'] = 1
-    #options['application_name'] = 'pddrive_spawn'
-    if (os.environ.get('history_db','') == 'yes'):
-        print ('set history database mode')
-        options['history_db'] = 1
-        options['application_name'] = 'pddrive_spawn'
-        #options['history_db_path'] = './'
-
     """ Intialize the tuner with existing data"""
     data = Data(problem)
     gt = GPTune(problem, computer = computer, data = data, options = options)

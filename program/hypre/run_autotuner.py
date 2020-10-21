@@ -239,12 +239,6 @@ def main():
     options['verbose'] = False
     options.validate(computer=computer)
 
-    if (os.environ.get('history_db','') == 'yes'):
-        print ('set history database mode')
-        options['history_db'] = 1
-        options['application_name'] = 'hypre'
-        #options['history_db_path'] = './'
-
     data = Data(problem)
     giventask = [[randint(nxmin,nxmax),randint(nymin,nymax),randint(nzmin,nzmax)] for i in range(ntask)]
 
