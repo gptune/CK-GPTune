@@ -193,3 +193,187 @@ def autotune(i):
         ck.out('not available application: ' + application)
 
     return {'return':0}
+
+##############################################################################
+# run MLA with gptune
+
+def MLA(i):
+    """
+    Input:  {
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+    """
+
+    ck.out('autotune with gptune (default)')
+
+    ck.out('')
+    ck.out('Command line: ')
+    ck.out('')
+
+    import json
+    cmd=json.dumps(i, indent=2)
+
+    ck.out(cmd)
+
+    application=i['bench']
+
+    if application in gptune_benchmarks:
+        ck.out('run target application: ' + application)
+        import copy
+
+        input_keys = list(i.keys())
+        argument_keys = copy.deepcopy(input_keys)
+        prescribed_keys = {'cids', 'action', 'bench', 'cid', 'out', 'module_uoa', 'xcids'}
+        for prescribed_key in prescribed_keys:
+            argument_keys.remove(prescribed_key)
+        print (argument_keys)
+
+        arguments = {}
+        for argument_key in argument_keys:
+            arguments[argument_key] = i[argument_key]
+        print (arguments)
+
+        r=ck.access({'action':'run',
+                     'module_uoa':'program',
+                     'data_uoa':application,
+                     'env':arguments})
+        if r['return']>0: return r
+
+    else:
+        ck.out('not available application: ' + application)
+
+    return {'return':0}
+
+
+##############################################################################
+# run MLA with history database
+
+def MLA_HistoryDB(i):
+    """
+    Input:  {
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+    """
+
+    ck.out('autotune with gptune with history database')
+
+    ck.out('')
+    ck.out('Command line: ')
+    ck.out('')
+
+    import json
+    cmd=json.dumps(i, indent=2)
+
+    ck.out(cmd)
+
+    application=i['bench']
+
+    if application in gptune_benchmarks:
+        ck.out('run target application: ' + application)
+
+        import copy
+
+        input_keys = list(i.keys())
+        argument_keys = copy.deepcopy(input_keys)
+        prescribed_keys = {'cids', 'action', 'bench', 'cid', 'out', 'module_uoa', 'xcids'}
+        for prescribed_key in prescribed_keys:
+            argument_keys.remove(prescribed_key)
+        #print (argument_keys)
+
+        arguments = {}
+        for argument_key in argument_keys:
+            arguments[argument_key] = i[argument_key]
+        arguments['CKGPTUNE_HISTORY_DB'] = 'yes'
+        arguments['CKGPTUNE_APPLICATION_NAME'] = application
+
+        compile_deps_version_info = parse_dependencies(i)
+        arguments['CKGPTUNE_COMPILE_DEPS'] = compile_deps_version_info
+        arguments['CKGPTUNE_MACHINE_NAME'] = i['machine']
+
+        r=ck.access({'action':'run',
+                     'module_uoa':'program',
+                     'data_uoa':application,
+                     'env':arguments})
+        if r['return']>0: return r
+
+    else:
+        ck.out('not available application: ' + application)
+
+    return {'return':0}
+
+
+##############################################################################
+# run MLA with surrogate model
+
+def MLA_LoadModel(i):
+    """
+    Input:  {
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+    """
+
+    ck.out('autotune with gptune with history database')
+
+    ck.out('')
+    ck.out('Command line: ')
+    ck.out('')
+
+    import json
+    cmd=json.dumps(i, indent=2)
+
+    ck.out(cmd)
+
+    application=i['bench']
+
+    if application in gptune_benchmarks:
+        ck.out('run target application: ' + application)
+
+        import copy
+
+        input_keys = list(i.keys())
+        argument_keys = copy.deepcopy(input_keys)
+        prescribed_keys = {'cids', 'action', 'bench', 'cid', 'out', 'module_uoa', 'xcids'}
+        for prescribed_key in prescribed_keys:
+            argument_keys.remove(prescribed_key)
+        #print (argument_keys)
+
+        arguments = {}
+        for argument_key in argument_keys:
+            arguments[argument_key] = i[argument_key]
+        arguments['CKGPTUNE_HISTORY_DB'] = 'yes'
+        arguments['CKGPTUNE_APPLICATION_NAME'] = application
+
+        compile_deps_version_info = parse_dependencies(i)
+        arguments['CKGPTUNE_COMPILE_DEPS'] = compile_deps_version_info
+        arguments['CKGPTUNE_MACHINE_NAME'] = i['machine']
+
+        arguments['CKGPTUNE_LOAD_MODEL'] = 'yes'
+
+        r=ck.access({'action':'run',
+                     'module_uoa':'program',
+                     'data_uoa':application,
+                     'env':arguments})
+        if r['return']>0: return r
+
+    else:
+        ck.out('not available application: ' + application)
+
+    return {'return':0}

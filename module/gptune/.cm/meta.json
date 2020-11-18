@@ -5,6 +5,15 @@
     },
     "crowdtune": {
       "desc": "autotune with gptune with history database"
+    },
+    "MLA": {
+      "desc": "run MLA with gptune (default)"
+    },
+    "MLA_HistoryDB": {
+      "desc": "run MLA with history database"
+    },
+    "MLA_LoadModel": {
+      "desc": "run MLA with pre-trained surrogate model"
     }
   },
   "desc": "GPTune workflows"
