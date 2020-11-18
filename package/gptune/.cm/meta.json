@@ -29,13 +29,13 @@
       "local": "yes",
       "name": "BLAS",
       "sort": 30,
-      "tags": "lib,blas,cblas"
+      "tags": "lib,blas,gptune"
     },
     "lapack": {
       "local": "yes",
       "name": "LAPACK",
       "sort": 40,
-      "tags": "lib,lapack"
+      "tags": "lib,lapack,gptune"
     },
     "scalapack": {
       "local": "yes",
