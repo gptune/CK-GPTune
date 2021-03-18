@@ -14,6 +14,12 @@
       "name": "GPTune library",
       "tags": "lib,gptune",
       "version_from": [1,0,0]
+    },
+    "lib-openmpi": {
+      "local": "yes",
+      "name": "MPI library",
+      "tags": "lib,mpi,openmpi,gptune",
+      "version_from": [4,0,0]
     }
   },
   "data_name": "gptune-demo",

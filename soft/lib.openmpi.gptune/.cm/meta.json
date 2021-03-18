@@ -11,8 +11,7 @@
     },
     "soft_file": {
       "linux": "libmpi.so",
-      "win": "libmpi.dll",
-      "mac": "libmpi.40.dylib"
+      "win": "libmpi.dll"
     },
     "soft_path_example": {
       "linux": "",
