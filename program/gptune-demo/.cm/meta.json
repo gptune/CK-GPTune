@@ -2,13 +2,13 @@
   "backup_data_uid": "4bec5f09447778df",
   "build_compiler_vars": {},
   "compile_deps": {
+  },
+  "run_deps": {
     "python": {
       "local": "yes",
       "name": "Python",
       "tags": "compiler,lang-python"
-    }
-  },
-  "run_deps": {
+    },
     "lib-gptune": {
       "local": "yes",
       "name": "GPTune library",
@@ -20,6 +20,26 @@
       "name": "MPI library",
       "tags": "lib,mpi,openmpi,gptune",
       "version_from": [4,0,0]
+    },
+    "lib-python-autotune": {
+      "local": "yes",
+      "name": "Python Autotune library",
+      "tags": "lib,python-package,autotune"
+    },
+    "lib-scalapack": {
+      "local": "yes",
+      "name": "ScaLAPACK library",
+      "tags": "lib,scalapack"
+    },
+    "lib-python-mpi4py": {
+      "local": "yes",
+      "name": "Python MPI4PY library",
+      "tags": "lib,python-package,mpi4py"
+    },
+    "lib-python-scikit-optimize": {
+      "local": "yes",
+      "name": "Python Scikit-Optimize library",
+      "tags": "lib,python-package,scikit-optimize,skopt"
     }
   },
   "data_name": "gptune-demo",

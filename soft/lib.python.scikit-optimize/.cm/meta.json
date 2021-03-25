@@ -4,8 +4,8 @@
     "check_that_exists": "yes",
     "env_prefix": "CK_ENV_PYTHON_PACKAGE_SCIKIT_OPTIMIZE",
     "limit_recursion_dir_search": {
-      "linux": 8,
-      "win": 8
+      "linux": 5,
+      "win": 5
     },
     "soft_file_universal": "skopt$#sep#$__init__.py",
     "version_module_name": "version",

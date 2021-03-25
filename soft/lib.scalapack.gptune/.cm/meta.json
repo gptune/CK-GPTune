@@ -14,7 +14,7 @@
       "win": "libscalapack.lib"
     }
   },
-  "soft_name": "SCALAPACK library",
+  "soft_name": "ScaLAPACK library",
   "tags": [
     "lib",
     "scalapack"
