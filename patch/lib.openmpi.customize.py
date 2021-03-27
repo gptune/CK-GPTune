@@ -23,8 +23,8 @@ def version_cmd(i):
     p0=os.path.basename(fp)
     p1=os.path.dirname(fp)
 
-    r = ck.access({'action': 'search_version',
-                   'module_uoa': 'soft',
+    r = ck.access({'action': 'search_version', 
+                   'module_uoa': 'soft', 
                    'path': fp})
     if r['return']>0: return r
     ver=r.get('version','')
@@ -134,9 +134,9 @@ def setup(i):
     env['MPICXX'] = os.path.join(pb,'mpicxx')
     env['MPIRUN'] = os.path.join(pb,'mpirun')
 
-    r = ck.access({'action': 'lib_path_export_script',
-                   'module_uoa': 'os',
-                   'host_os_dict': hosd,
+    r = ck.access({'action': 'lib_path_export_script', 
+                   'module_uoa': 'os', 
+                   'host_os_dict': hosd, 
                    'lib_path': cus.get('path_lib','')})
     if r['return']>0: return r
     s += r['script']

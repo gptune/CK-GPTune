@@ -12,7 +12,7 @@
     "lib-openmpi": {
       "local": "yes",
       "name": "MPI library",
-      "tags": "lib,mpi,openmpi,gptune",
+      "tags": "lib,mpi,openmpi",
       "version_from": [4,0,0]
     }
   },
