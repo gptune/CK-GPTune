@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+#/bin/bash
+
+source ~/.bash_profile
 
 output=$(ck  | grep 'Path to the default repo')
 ck_default_path=${output##* }

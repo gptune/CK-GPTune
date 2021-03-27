@@ -4,42 +4,16 @@
   "compile_deps": {
   },
   "run_deps": {
-    "python": {
-      "local": "yes",
-      "name": "Python",
-      "tags": "compiler,lang-python"
-    },
     "lib-gptune": {
       "local": "yes",
       "name": "GPTune library",
-      "tags": "lib,gptune",
-      "version_from": [1,0,0]
+      "tags": "lib,gptune"
     },
     "lib-openmpi": {
       "local": "yes",
       "name": "MPI library",
       "tags": "lib,mpi,openmpi,gptune",
       "version_from": [4,0,0]
-    },
-    "lib-python-autotune": {
-      "local": "yes",
-      "name": "Python Autotune library",
-      "tags": "lib,python-package,autotune"
-    },
-    "lib-scalapack": {
-      "local": "yes",
-      "name": "ScaLAPACK library",
-      "tags": "lib,scalapack"
-    },
-    "lib-python-mpi4py": {
-      "local": "yes",
-      "name": "Python MPI4PY library",
-      "tags": "lib,python-package,mpi4py"
-    },
-    "lib-python-scikit-optimize": {
-      "local": "yes",
-      "name": "Python Scikit-Optimize library",
-      "tags": "lib,python-package,scikit-optimize,skopt"
     }
   },
   "data_name": "gptune-demo",
@@ -56,7 +30,7 @@
     "default": {
       "ignore_return_code": "no",
       "run_time": {
-        "run_cmd_main": "$MPIRUN -n 1 $<<CK_ENV_COMPILER_PYTHON_FILE>>$ ..$#dir_sep#$demo.py",
+        "run_cmd_main": "$MPIRUN -n 1 python ..$#dir_sep#$demo.py",
         "run_cmd_out1": "stdout.log",
         "run_cmd_out2": "stderr.log",
         "run_output_files": [

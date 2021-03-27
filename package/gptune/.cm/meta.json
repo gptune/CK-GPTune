@@ -25,18 +25,6 @@
       "tags": "lib,mpi,openmpi",
       "version_from": [4,0,1]
     },
-    "blas": {
-      "local": "yes",
-      "name": "BLAS",
-      "sort": 30,
-      "tags": "lib,blas,gptune"
-    },
-    "lapack": {
-      "local": "yes",
-      "name": "LAPACK",
-      "sort": 40,
-      "tags": "lib,lapack,gptune"
-    },
     "scalapack": {
       "local": "yes",
       "name": "SCALAPACK",
