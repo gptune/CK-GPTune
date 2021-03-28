@@ -11,7 +11,7 @@
       "name": "Python interpreter",
       "sort": 10,
       "tags": "compiler,python",
-      "version_from": [3,0,0]
+      "version_from": [3,7,0]
     },
     "compiler": {
       "local": "yes",

@@ -7,5 +7,5 @@ ck_default_path=${output##* }
 additional_path="/module/soft/"
 ck_module_path=${ck_default_path}${additional_path}
 
-cp patch/soft_module.py $ck_module_path/module.py
-cp patch/lib.openmpi.customize.py ../ck-env/soft/lib.openmpi/customize.py
+cp patches/soft.module.py $ck_module_path/module.py
+cp patches/lib.openmpi.customize.py ../ck-env/soft/lib.openmpi/customize.py
