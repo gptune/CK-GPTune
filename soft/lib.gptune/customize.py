@@ -139,7 +139,13 @@ def setup(i):
     print ("path_build: " + path_build)
 
     env['GPTUNEROOT']       = path_build
+
     gptune_python_codes     = os.path.join(path_build, 'GPTune')
-    env['PYTHONPATH']       = path_build + ":" + gptune_python_codes + ( ';%PYTHONPATH%' if winh=='yes' else ':${PYTHONPATH}')
+    autotune_path           = os.path.join(path_build, 'autotune')
+    scikit_optimize_path    = os.path.join(path_build, 'scikit-optimize')
+    mpi4py_path             = os.path.join(path_build, 'mpi4py')
+    scalapack_driver_path   = os.path.join(path_build, 'scalapack-driver/spt')
+
+    env['PYTHONPATH']       = path_build + ":" + gptune_python_codes + ":" + scikit_optimize_path + ":" + mpi4py_path + ":" + scalapack_driver_path + ( ';%PYTHONPATH%' if winh=='yes' else ':${PYTHONPATH}')
 
     return {'return':0, 'bat':''}
