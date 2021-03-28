@@ -1,10 +1,10 @@
 {
-  "data_uoa": "ck-gptune",
-  "data_alias": "ck-gptune",
-  "data_name": "ck-gptune",
+  "data_uoa": "CK-GPTune",
+  "data_alias": "CK-GPTune",
+  "data_name": "CK-GPTune",
   "data_uid": "4ce2a452dac912f5",
   "dict": {
-    "url": "https://github.com/yhcho614/ck-gptune",
+    "url": "https://github.com/gptune/CK-GPTune",
     "shared": "git",
     "repo_deps": [
       {
