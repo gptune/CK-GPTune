@@ -140,6 +140,11 @@ def setup(i):
 
     env['GPTUNEROOT']       = path_build
 
+    gptune_lib_path         = os.path.join(path_build, 'scalapack-2.1.0/build/install/lib')
+
+    env['LD_LIBRARY_PATH']   = gptune_lib_path + ":${LD_LIBRARY_PATH}"
+    env['DYLD_LIBRARY_PATH'] = gptune_lib_path + ":${DYLD_LIBRARY_PATH}"
+
     gptune_python_codes     = os.path.join(path_build, 'GPTune')
     autotune_path           = os.path.join(path_build, 'autotune')
     scikit_optimize_path    = os.path.join(path_build, 'scikit-optimize')
