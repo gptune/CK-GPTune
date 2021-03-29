@@ -75,6 +75,28 @@ def parse_dependencies(i):
 
     return (compile_deps_version_info)
 
+def parse_history_db_meta_data(i):
+    import json
+    import os.path
+    from os import path
+
+    application = i['target']
+
+    r = ck.find_path_to_data({'module_uoa':'program',
+        'data_uoa':application})
+    path_to_entry = r['path']
+    path_to_entry_meta_file = path_to_entry + "/.cm/meta.json"
+
+    history_db_meta_data = {}
+
+    with open(path_to_entry_meta_file, "r") as meta_file:
+        meta_data = json.load(meta_file)
+
+        history_db_meta_data['CKGPTUNE_HISTORY_DB'] = "yes"
+        history_db_meta_data['CKGPTUNE_TUNING_PROBLEM_NAME'] = meta_data["tuning_problem_name"]
+        history_db_meta_data['CKGPTUNE_MACHINE_CONFIGURATION'] = meta_data['machine_configuration']
+
+    return history_db_meta_data
 
 ##############################################################################
 # autotune with gptune with history database
@@ -210,7 +232,7 @@ def MLA(i):
 
     """
 
-    ck.out('autotune with gptune (default)')
+    ck.out('Run GPTune MLA (default)')
 
     ck.out('')
     ck.out('Command line: ')
@@ -221,32 +243,32 @@ def MLA(i):
 
     ck.out(cmd)
 
-    application=i['bench']
+    tuning_problem = i['target']
 
-    if application in gptune_benchmarks:
-        ck.out('run target application: ' + application)
-        import copy
+    ck.out('run target tuning problem: ' + tuning_problem)
+    import copy
 
-        input_keys = list(i.keys())
-        argument_keys = copy.deepcopy(input_keys)
-        prescribed_keys = {'cids', 'action', 'bench', 'cid', 'out', 'module_uoa', 'xcids'}
-        for prescribed_key in prescribed_keys:
-            argument_keys.remove(prescribed_key)
-        print (argument_keys)
+    input_keys = list(i.keys())
+    argument_keys = copy.deepcopy(input_keys)
+    prescribed_keys = {'cids', 'action', 'target', 'cid', 'out', 'module_uoa', 'xcids'}
+    for prescribed_key in prescribed_keys:
+        argument_keys.remove(prescribed_key)
+    print (argument_keys)
 
-        arguments = {}
-        for argument_key in argument_keys:
-            arguments[argument_key] = i[argument_key]
-        print (arguments)
+    arguments = {}
+    for argument_key in argument_keys:
+        arguments[argument_key] = i[argument_key]
+    print (arguments)
 
-        r=ck.access({'action':'run',
-                     'module_uoa':'program',
-                     'data_uoa':application,
-                     'env':arguments})
-        if r['return']>0: return r
+    history_db_meta_data = parse_history_db_meta_data(i)
 
-    else:
-        ck.out('not available application: ' + application)
+    arguments.update(history_db_meta_data)
+
+    r=ck.access({'action':'run',
+                 'module_uoa':'program',
+                 'data_uoa':tuning_problem,
+                 'env':arguments})
+    if r['return']>0: return r
 
     return {'return':0}
 

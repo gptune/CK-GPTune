@@ -44,5 +44,21 @@
     "program",
     "lang-python"
   ],
-  "template_type": "Python program workflow"
+  "template_type": "Python program workflow",
+  "tuning_problem_name": "GPTune-Demo",
+  "machine_configuration": {
+    "machine_name": "mymachine",
+    "intel": {
+      "nodes": 1,
+      "cores": 4
+    }
+  },
+  "loadable_machine_configurations": {
+    "mymachine": {
+      "intel": {
+        "nodes": 1,
+        "cores": 4
+      }
+    }
+  }
 }
