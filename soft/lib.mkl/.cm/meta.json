@@ -1,0 +1,28 @@
+{
+  "auto_detect": "yes",
+  "customize": {
+    "check_that_exists": "yes",
+    "ck_version": 10,
+    "env_prefix": "CK_ENV_LIB_MKL",
+    "limit_recursion_dir_search": {
+      "linux": 4,
+      "win": 4
+    },
+    "soft_file": {
+      "linux": "libmkl_core$#file_ext_dll#$",
+      "win": "libmkl_core$#file_ext_dll#$"
+    },
+    "soft_path_example": {}
+  },
+  "soft_name": "Intel Math Kernel Library",
+  "tags": [
+    "lib",
+    "mkl",
+    "MKL",
+    "intel-mkl",
+    "Intel-MKL",
+    "math-kernel-library"
+  ],
+  "template": "yes",
+  "template_type": "ArmCL library"
+}
