@@ -10,8 +10,8 @@
       "win": 4
     },
     "soft_file": {
-      "linux": "libmpi.dylib",
-      "win": "libmpi.dll"
+      "linux": "libmpi$#file_ext_dll#$",
+      "win": "libmpi$#file_ext_dll#$"
     },
     "soft_path_example": {
       "linux": "",
