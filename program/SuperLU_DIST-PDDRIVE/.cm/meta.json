@@ -8,6 +8,11 @@
     }
   },
   "compile_deps": {
+    "gcc": {
+      "local": "yes",
+      "name": "C compiler",
+      "tags": "compiler,gcc"
+    },
     "openmpi": {
       "local": "yes",
       "name": "OpenMPI library",
