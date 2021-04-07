@@ -1766,6 +1766,8 @@ def check(i):
 
     import sys
     dir_candidates.extend(os.environ.get('LD_LIBRARY_PATH','').split(':'))
+    #print (os.environ.get('HOME','')+"/CK/CK-GPTune/program/")
+    dir_candidates.extend(os.environ.get('HOME','')+"/CK/CK-GPTune/program/")
     dir_candidates.extend(sys.path)
 
     #

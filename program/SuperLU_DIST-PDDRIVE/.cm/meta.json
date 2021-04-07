@@ -1,0 +1,67 @@
+{
+  "backup_data_uid": "86ded978c46a4dd2",
+  "build_compiler_vars": {},
+  "use_compile_script": "yes",
+  "compile_cmds": {
+    "default": {
+      "cmd": "bash ../install$#script_ext#$"
+    }
+  },
+  "compile_deps": {
+    "openmpi": {
+      "local": "yes",
+      "name": "OpenMPI library",
+      "tags": "lib,openmpi"
+    },
+    "mkl": {
+      "local": "yes",
+      "name": "Intel Math Kernel Library",
+      "tags": "lib,mkl,math-kernel-library"
+    }
+  },
+  "run_deps": {
+    "lib.gptune": {
+      "local": "yes",
+      "name": "GPTune library",
+      "tags": "lib,gptune"
+    }
+  },
+  "software_configuration": {
+    "lib.parmetis": {
+      "version_split": [4,0,3]
+    },
+    "lib.superlu_dist": {
+      "version_split": [6,4,0]
+    }
+  },
+  "data_name": "SuperLU_DIST-PDDRIVE",
+  "main_language": "python",
+  "no_compile": "yes",
+  "no_target_file": "yes",
+  "print_files_after_run": [
+    "stderr.log",
+    "stdout.log"
+  ],
+  "process_in_tmp": "yes",
+  "program": "yes",
+  "run_cmds": {
+    "default": {
+      "ignore_return_code": "no",
+      "run_time": {
+        "run_cmd_main": "sh ../run_autotuner.sh",
+        "run_cmd_out1": "stdout.log",
+        "run_cmd_out2": "stderr.log",
+        "run_output_files": [
+          "stdout.log",
+          "stderr.log"
+        ]
+      }
+    }
+  },
+  "tags": [
+    "program",
+    "superlu_dist",
+    "pddrive"
+  ],
+  "template_type": "Python program workflow"
+}
