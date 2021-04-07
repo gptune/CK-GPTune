@@ -40,10 +40,10 @@
     }
   },
   "machine_configuration": {
-    "machine_name": "mymachine",
-    "myprocessor" :{
-      "nodes": 1,
-      "cores": 4
+    "machine_name": "Cori",
+    "haswell" :{
+      "nodes": 2,
+      "cores": 32
     }
   },
   "data_name": "SuperLU_DIST-PDDRIVE",

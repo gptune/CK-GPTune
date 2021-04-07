@@ -151,6 +151,6 @@ def setup(i):
     mpi4py_path             = os.path.join(path_build, 'mpi4py')
     scalapack_driver_path   = os.path.join(path_build, 'scalapack-driver/spt')
 
-    env['PYTHONPATH']       = path_build + ":" + gptune_python_codes + ":" + scikit_optimize_path + ":" + mpi4py_path + ":" + scalapack_driver_path + ( ';%PYTHONPATH%' if winh=='yes' else ':${PYTHONPATH}')
+    env['PYTHONPATH']       = path_build + ":" + gptune_python_codes + ":" + autotune_path + ":" + scikit_optimize_path + ":" + mpi4py_path + ":" + scalapack_driver_path + ( ';%PYTHONPATH%' if winh=='yes' else ':${PYTHONPATH}')
 
     return {'return':0, 'bat':''}
