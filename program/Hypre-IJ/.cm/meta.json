@@ -1,0 +1,79 @@
+{
+  "backup_data_uid": "5334896a3286d5ca",
+  "build_compiler_vars": {},
+  "use_compile_script": "yes",
+  "compile_cmds": {
+    "default": {
+      "cmd": "bash ../install$#script_ext#$"
+    }
+  },
+  "compile_deps": {
+    "gcc": {
+      "local": "yes",
+      "name": "C compiler",
+      "tags": "compiler,gcc"
+    },
+    "openmpi": {
+      "local": "yes",
+      "name": "OpenMPI library",
+      "tags": "lib,openmpi"
+    }
+  },
+  "run_deps": {
+    "lib.gptune": {
+      "local": "yes",
+      "name": "GPTune library",
+      "tags": "lib,gptune"
+    }
+  },
+  "software_configuration": {
+    "hypre": {
+      "version_split": [2,20,0]
+    }
+  },
+  "machine_configuration": {
+    "machine_name": "Cori",
+    "haswell" :{
+      "nodes": 2,
+      "cores": 32
+    }
+  },
+  "loadable_machine_configurations": {
+      "Cori" : {
+          "haswell": {
+              "nodes":2,
+              "cores":32
+          }
+      }
+  },
+  "data_name": "Hypre-IJ",
+  "main_language": "python",
+  "no_compile": "yes",
+  "no_target_file": "yes",
+  "print_files_after_run": [
+    "stderr.log",
+    "stdout.log"
+  ],
+  "process_in_tmp": "yes",
+  "program": "yes",
+  "run_cmds": {
+    "default": {
+      "ignore_return_code": "no",
+      "run_time": {
+        "run_cmd_main": "bash ../run_autotuner$#script_ext#$",
+        "run_cmd_out1": "stdout.log",
+        "run_cmd_out2": "stderr.log",
+        "run_output_files": [
+          "stdout.log",
+          "stderr.log"
+        ]
+      }
+    }
+  },
+  "tags": [
+    "program",
+    "hypre",
+    "ij"
+  ],
+  "template_type": "Python program workflow"
+}
