@@ -4,8 +4,8 @@
     "check_that_exists": "yes",
     "env_prefix": "CK_ENV_PYTHON_PACKAGE_GPTUNE",
     "limit_recursion_dir_search": {
-      "linux": 5,
-      "win": 5
+      "linux": 4,
+      "win": 4
     },
     "soft_file_universal": "GPTune$#sep#$__init__.py",
     "version_module_name": "version",

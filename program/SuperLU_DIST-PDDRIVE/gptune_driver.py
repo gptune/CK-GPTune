@@ -112,11 +112,6 @@ def cst2(npernode,nprows,nodes):
 
 def main():
 
-    os.environ["LD_LIBRARY_PATH"] = os.environ.get("LD_LIBRARY_PATH","")+":"+"/global/homes/y/ycho/CK/CK-GPTune/program/SuperLU_DIST-PDDRIVE/tmp/superlu_dist/parmetis-4.0.3/install/lib"+":"+"$PWD/superlu_dist/parmetis-4.0.3/install/lib/"
-    print (os.environ.get("LD_LIBRARY_PATH"))
-
-    os.system("export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/superlu_dist/parmetis-4.0.3/install/lib/")
-
     # Extract arguments
     tla = int(os.environ.get('tls','0'))
     ntask = int(os.environ.get('ntask','1'))
@@ -126,21 +121,16 @@ def main():
     obj = str(os.environ.get('obj','time'))
     target=obj
     TUNER_NAME = optimization
-    machine = 'mymachine'
-    processor = 'myprocessor'
-    nodes = 1
-    cores = 32
-    #(machine, processor, nodes, cores) = GetMachineConfiguration()
+    (machine, processor, nodes, cores) = GetMachineConfiguration()
     print ("machine: " + machine + " processor: " + processor + " num_nodes: " + str(nodes) + " num_cores: " + str(cores))
 
     os.environ['MACHINE_NAME'] = machine
     os.environ['TUNER_NAME'] = TUNER_NAME
 
     nprocmax = nodes*cores
-    # matrices = ["big.rua", "g4.rua", "g20.rua"]
-    # matrices = ["Si2.rb", "SiH4.rb", "SiNa.rb", "Na5.rb", "benzene.rb", "Si10H16.rb", "Si5H12.rb", "SiO.rb", "Ga3As3H12.rb","H2O.rb"]
-    # matrices = ["Si2.rb", "SiH4.rb", "SiNa.rb", "Na5.rb", "benzene.rb", "Si10H16.rb", "Si5H12.rb", "SiO.rb", "Ga3As3H12.rb", "GaAsH6.rb", "H2O.rb"]
+
     matrices = ["big.rua","g20.rua","Si2.bin", "SiH4.bin", "SiNa.bin", "Na5.bin", "benzene.bin", "Si10H16.bin", "Si5H12.bin", "SiO.bin", "Ga3As3H12.bin", "GaAsH6.bin", "H2O.bin"]
+
     # Task parameters
     matrix    = Categoricalnorm (matrices, transform="onehot", name="matrix")
     # Input parameters
