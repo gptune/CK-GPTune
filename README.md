@@ -18,30 +18,12 @@ Once you have installed CK, you can install CK-GPTune using the following comman
 ```
 $ ck pull repo --url=https://github.com/gptune/CK-GPTune
 ```
-This will also install several required CK repositories/modules/tools automatically. The user can check $HOME/CK directory for the details.
+This will also install several required CK repositories/modules/tools automatically. The user can check *$HOME/CK* directory for the details.
 
 There are also several patch files in CK-GPTune to supplement the original CK tools. Please use the following command:
 ```
 $ cd $HOME/CK/CK-GPTune/
 $ bash patch.sh
-```
-
-## GPTune Auto-Installation (this feature is not up-to-date; recommended to install GPTune manually with installation scripts)
-
-CK-GPTune allows you to install the GPTune software package (https://github.com/gptune/GPTune/tree/history_db) with the following command.
-
-```
-$ ck install package:gptune
-```
-
-GPTune has multiple dependencies (i.e. software packages needed by GPTune). For example, GPTune requires OpenMPI, BLAS, LAPACK, Scalapack, MPI4PY, Scikit-optimize, and Autotune. This command automatically detects whether these software are available on your system.
-
-If there are missing software packages, CK-GPTune will print out a message to let you know which software packages need to be installed. If there are multiple software verions in your computer, CK-GPTune will ask you to choose one.
-
-After resolving all the dependencies, the GPTune software will be automatically installed in a sub directory in $HOME/CK-TOOLS.
-
-```
-e.g. $HOME/CK-TOOLS/lib-gptune-1.0.0-gcc-9.3.0-compiler.python-3.8.5-linux-64
 ```
 
 ## Detect GPTune
@@ -58,15 +40,16 @@ You can check the detected software environment variables in $HOME/CK/local/env/
 
 ## CK-enabled reproducible tuning workflows
 
-CK-GPTune provides a number of tuning workflows using GPTune. We are currently offering four programs `gptune-demo`, `ScaLAPACK-PDGEQRF`, `SuperLU_DIST-PDDRIVE`, and `Hypre-IJ`. Please check out the `program` directory for the details.
+CK-GPTune provides a number of reproducible GPTune tuning workflows with CK. We are currently offering four examples `gptune-demo`, `ScaLAPACK-PDGEQRF`, `SuperLU_DIST-PDDRIVE`, and `Hypre-IJ`. Please check out the `program` directory for the details.
 
-The user can install (compile) and run these benchmarks using simple CK command line interafaces. Similar to when we install the GPTune software package, if there are software dependencies (defined in meta.json in the .cm directory of each benchmark), CK-GPTune will detect the installation `path` and `version` of the required softwares.
+The user can install (compile) and run these examples using simple command line interafaces. If there are software dependencies to compile/run, CK will detect the installation `path` and `version` of the required softwares. Defined software dependencies can be found at the meta.json file in the .cm directory of each program directory (e.g. *$HOME/CK/CK-GPTune/program/ScaLAPACK-PDGEQRF/.cm/meta.json*)
+
 
 ```
 $ ck compile ck-gptune:program:ScaLAPACK-PDGEQRF
 ```
 
-The user then run the workflow (with the GPTune's MLA history database features) using the following command:
+CK-GPTune provides a command line interface to run CK-enabled GPTune workflows with the GPTune's MLA and history database features.
 
 ```
 $ ck MLA gptune program:ScaLAPACK-PDGEQRF
