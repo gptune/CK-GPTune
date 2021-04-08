@@ -14,22 +14,21 @@ import os
 
 def version_cmd(i):
 
+    import subprocess
+
     ck=i['ck_kernel']
 
     full_path=i['full_path']
-    fn=os.path.basename(full_path)
+    fp=i['full_path']
+    p1=os.path.dirname(fp)
+    p2=os.path.dirname(p1)
+    scalapack_pc = str(p2)+"/scalapack.pc"
 
-    rfp=os.path.realpath(full_path)
-    rfn=os.path.basename(rfp)
+    output = subprocess.getstatusoutput("cat " + scalapack_pc + " | grep Version")
+    version_split = output[1].split(" ")[-1]
+    version_split = version_split.split("rc")[0]
 
-    ver=''
-
-    if rfn.startswith(fn):
-       ver=rfn[len(fn)+1:]
-       if ver!='':
-          ver='api-'+ver
-
-    return {'return':0, 'cmd':'', 'version':ver}
+    return {'return':0, 'cmd': '', 'version': str(version_split)}
 
 ##############################################################################
 # setup environment setup
@@ -123,6 +122,7 @@ def setup(i):
     if r['return']>0: return r
     s += r['script']
 
-    env['SCALAPACK_LIB'] = fp
+    env[ep+'_LIB'] = fp
+    env[ep+'_DIR'] = p1
 
     return {'return':0, 'bat':s}

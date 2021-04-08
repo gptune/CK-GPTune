@@ -13,7 +13,7 @@ import os
 # get version from path
 
 def version_cmd(i):
-    import os
+
     import subprocess
 
     ck=i['ck_kernel']

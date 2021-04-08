@@ -1,5 +1,5 @@
 {
-  "backup_data_uid": "86ded978c46a4dd2",
+  "backup_data_uid": "644281748fcbcc95",
   "build_compiler_vars": {},
   "use_compile_script": "yes",
   "compile_cmds": {
@@ -22,6 +22,11 @@
       "local": "yes",
       "name": "Intel Math Kernel Library",
       "tags": "lib,mkl,math-kernel-library"
+    },
+    "scalapack": {
+      "local": "yes",
+      "name": "ScaLAPACK library",
+      "tags": "lib,scalapack"
     }
   },
   "run_deps": {
@@ -29,14 +34,6 @@
       "local": "yes",
       "name": "GPTune library",
       "tags": "lib,gptune"
-    }
-  },
-  "software_configuration": {
-    "lib.parmetis": {
-      "version_split": [4,0,3]
-    },
-    "lib.superlu_dist": {
-      "version_split": [6,4,0]
     }
   },
   "machine_configuration": {
@@ -54,7 +51,7 @@
           }
       }
   },
-  "data_name": "SuperLU_DIST-PDDRIVE",
+  "data_name": "ScaLAPACK-PDGEQRF",
   "main_language": "python",
   "no_compile": "yes",
   "no_target_file": "yes",
@@ -80,8 +77,10 @@
   },
   "tags": [
     "program",
-    "superlu_dist",
-    "pddrive"
+    "scalapack",
+    "ScaLAPACK",
+    "PDGEQRF",
+    "pdgeqrf"
   ],
   "template_type": "Python program workflow"
 }
