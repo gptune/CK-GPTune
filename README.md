@@ -46,7 +46,7 @@ The user can install (compile) and run these examples using simple command line 
 
 
 ```
-$ ck compile ck-gptune:program:ScaLAPACK-PDGEQRF
+$ ck compile CK-GPTune:program:ScaLAPACK-PDGEQRF
 ```
 
 CK-GPTune provides a command line interface to run CK-enabled GPTune workflows with the GPTune's MLA and history database features.
